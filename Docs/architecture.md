@@ -599,7 +599,8 @@ The UI is a static frontend using the Stitch design tokens and component anatomy
 | Cold start | Chroma is rebuilt from committed `data/chunks/` and `data/embeddings/vectors.npy` into `RAG_TMP_DIR` |
 | Secrets | `GROQ_API_KEY` and optional `HF_TOKEN` come from Vercel environment variables; `.env` is never committed |
 | Logs | Retrieval and answer logs are written under the ephemeral temp directory on Vercel |
-| Bundle | `vercel.json` excludes generated logs, local Chroma data, raw pages, tests, docs, and `.env` from the function bundle |
+| Bundle | `vercel.json` excludes generated logs, local Chroma data, raw pages, tests, docs, and `.env`; `requirements.txt` pins CPU-only `torch` so CUDA wheels are never bundled |
+| Function size | CPU-only PyTorch still exceeds the standard 500 MB Python limit; `VERCEL_SUPPORT_LARGE_FUNCTIONS=1` enables the 5 GB Large Functions path |
 
 ---
 

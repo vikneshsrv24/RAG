@@ -101,6 +101,18 @@ class ApiTests(unittest.TestCase):
         self.assertNotIn("groww-mf-rag", str(cfg.vector_db["persist_dir"]))
         self.assertNotIn("groww-mf-rag", str(cfg.paths.retrieval_logs_dir))
 
+    def test_requirements_use_cpu_only_torch(self) -> None:
+        lines = [
+            line.strip()
+            for line in (ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.startswith("#")
+        ]
+        self.assertIn("--extra-index-url https://download.pytorch.org/whl/cpu", lines)
+        torch_lines = [line for line in lines if line.startswith("torch")]
+        self.assertEqual(len(torch_lines), 1, torch_lines)
+        self.assertTrue(torch_lines[0].startswith("torch=="), torch_lines)
+        self.assertIn("+cpu", torch_lines[0], torch_lines)
+
 
 if __name__ == "__main__":
     unittest.main()

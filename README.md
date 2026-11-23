@@ -58,16 +58,23 @@ Import `https://github.com/vikneshsrv24/RAG` with these settings:
 | Entry Function | `app.py` |
 | Max Duration | `300` seconds |
 | Function Memory | Set in Vercel dashboard if needed |
-| Large Functions | Enable only if the bundle exceeds the Python size limit |
+| Large Functions | Enable; CPU-only `torch` still produces a bundle above the standard 500 MB Python limit |
+
+`requirements.txt` pins `torch==2.15.0+cpu` and points `uv`/pip at `https://download.pytorch.org/whl/cpu`. This prevents Vercel from pulling the CUDA/GPU wheels from PyPI, which alone add roughly 5 GB and cause `LAMBDA_SIZE_EXCEEDED`.
 
 Add these Project → Settings → Environment Variables:
 
 | Name | Value | Required |
 |---|---|---|
+| `VERCEL_SUPPORT_LARGE_FUNCTIONS` | `1` | Yes; allows bundles up to 5 GB on eligible projects |
+| `UV_TORCH_BACKEND` | `cpu` | Recommended; tells `uv` to resolve CPU-only PyTorch |
+| `UV_EXTRA_INDEX_URL` | `https://download.pytorch.org/whl/cpu` | Recommended fallback for older `uv` builds |
 | `GROQ_API_KEY` | Groq API key | No; enables live LLM answers |
 | `HF_TOKEN` | Hugging Face token | No; avoids rate-limited model downloads |
 | `RAG_TMP_DIR` | `/tmp` | Recommended |
 | `PYTHONUNBUFFERED` | `1` | Recommended |
+
+Select **Production, Preview, and Development** for each variable, then **Redeploy** the latest commit. Environment variables only apply to new deployments.
 
 `vercel.json` already sets `maxDuration` and excludes generated logs, local Chroma data, tests, docs, and `.env` from the function bundle. Chroma is rebuilt from committed chunks and vectors into `/tmp` on a cold start; logs are ephemeral.
 

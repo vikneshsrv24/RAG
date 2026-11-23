@@ -784,12 +784,17 @@ The inspector defaults to `Answer`, does not recompute embeddings, and never cal
 | Entry Function | `app.py` |
 | Max Duration | `300` seconds |
 | Memory | Set in the Vercel dashboard if needed |
-| Large Functions | Enable only if the Python bundle exceeds the limit |
+| Large Functions | Enable; the CPU-only PyTorch bundle still exceeds the standard 500 MB Python limit |
+
+`requirements.txt` pins `torch==2.15.0+cpu` and includes `--extra-index-url https://download.pytorch.org/whl/cpu`. Without this, Vercel resolves the CUDA-enabled Linux wheel from PyPI and the bundle grows to roughly 5.8 GB, failing with `LAMBDA_SIZE_EXCEEDED`.
 
 Environment variables:
 
 | Name | Purpose |
 |---|---|
+| `VERCEL_SUPPORT_LARGE_FUNCTIONS` | `1`; enables bundles up to 5 GB on eligible projects |
+| `UV_TORCH_BACKEND` | `cpu`; makes `uv` resolve CPU-only PyTorch |
+| `UV_EXTRA_INDEX_URL` | CPU wheel index fallback for older `uv` builds |
 | `GROQ_API_KEY` | Enables live Groq answers; omit for extractive fallback |
 | `HF_TOKEN` | Optional; avoids Hugging Face rate limits |
 | `RAG_TMP_DIR` | `/tmp`; writable location for rebuilt Chroma and logs |
