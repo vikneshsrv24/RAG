@@ -7,5 +7,6 @@ numpy
 sentence-transformers
 chromadb
 groq
-streamlit
+fastapi>=0.117.1
+uvicorn>=0.35.0
 pytest

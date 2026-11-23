@@ -67,8 +67,13 @@ D:\RAG\
 │  │  ├─ llm_adapter.py
 │  │  ├─ prompts.py
 │  │  └─ validator.py
-│  └─ ui\
-│     └─ app.py
+├─ public\
+│  ├─ index.html
+│  ├─ styles.css
+│  └─ app.js
+├─ app.py
+├─ vercel.json
+├─ .python-version
 └─ tests\
 ```
 
@@ -78,7 +83,7 @@ PowerShell command:
 New-Item -ItemType Directory -Force `
   config, data\raw_pages, data\chunks, data\embeddings, data\chroma_store, `
   logs\retrieval, logs\answers, src\ingestion, src\storage, src\retrieval, `
-  src\generation, src\ui, tests | Out-Null
+  src\generation, public, tests | Out-Null
 ```
 
 ### Minimum dependencies
@@ -95,7 +100,8 @@ numpy
 sentence-transformers
 chromadb
 groq
-streamlit
+fastapi>=0.117.1
+uvicorn>=0.35.0
 pytest
 ```
 
@@ -651,11 +657,11 @@ Last updated from sources: <fetch_timestamp>
 
 ---
 
-## 8. UI
+## 8. Vercel UI and API
 
 ### Goal
 
-Provide a tiny chat UI and a read-only demo view of pipeline artifacts, using the Google Stitch export as the **visual source of truth**.
+Provide a tiny chat UI and a read-only demo view of pipeline artifacts, using the Google Stitch export as the **visual source of truth**. Streamlit is not used; Vercel serves the static UI from `public/` and runs the FastAPI function from `app.py`.
 
 ### Design source of truth
 
@@ -677,16 +683,16 @@ The Stitch prototype contains illustrative mock facts, invented source labels, a
 
 ### Visual contract from Stitch
 
-| Area | Required adaptation in `src/ui/app.py` |
+| Area | Required adaptation in `public/` |
 |---|---|
-| Top header | Groww wordmark + teal dot, `MF Facts Assistant`, `Strict Fact-Engine` pill, `Grounding Active: 5 Approved Sources` status, `Reset Session`, and a pill-shaped `Guidelines` popover. Do not render a user avatar. |
-| Left sidebar | `Knowledge Sources` with `5 Verified` badge; one card per approved registry entry; `Zero Hallucination Filter` callout. Titles and URLs come from `config/source_registry.yaml`, never hard-coded. |
+| Top header | Groww wordmark + teal dot, `MF Facts Assistant`, `Strict Fact-Engine` pill, `Grounding Active: 5 Approved Sources` status, `Reset Session`, and a pill-shaped `Guidelines` dialog. Do not render a user avatar. |
+| Left sidebar | `Knowledge Sources` with `5 Verified` badge; one card per approved registry entry; `Zero Hallucination Filter` callout. Titles and URLs come from `GET /api/sources`, which reads `config/source_registry.yaml`, never hard-coded. |
 | Welcome hero | `Welcome! Ask a factual question...` plus the `Facts-only. No investment advice.` badge. |
-| Suggested prompts | Three buttons from `cfg.ui.examples`. |
+| Suggested prompts | Three buttons from `cfg.ui.examples`, exposed by `GET /api/sources`. |
 | Assistant answer card | `Verified Scheme Fact` or `Refusal / Redirect` badge, answer body, one citation card with a single `Open Page` link, and `Last updated from sources:` footer. |
-| Input dock | Streamlit chat input plus microcopy: `Grounding: 5 Approved AMC Indexes` and `Responses are strictly factual and non-promotional.` |
-| Inspector | Read-only panel selector in the sidebar, defaulting to `Answer`. Raw source files are shown only inside collapsible sections of the `Sources` panel. |
-| Responsive behavior | At `<= 768px`, wrap horizontal blocks to full width, hide the `Strict Fact-Engine` pill, use `nowrap` for the `Guidelines` popover label, and allow the citation action to sit below its text. |
+| Input dock | Static form plus microcopy: `Grounding: 5 Approved AMC Indexes` and `Responses are strictly factual and non-promotional.` |
+| Inspector | Read-only panel selector in the sidebar, defaulting to `Answer`, backed by `GET /api/inspect`. Raw source files are shown only inside collapsible sections. |
+| Responsive behavior | At `<= 900px`, stack the sidebar below the chat. At `<= 640px`, make header controls, answer cards, and the input dock full width, hide the `Strict Fact-Engine` pill, keep the `Guidelines` label on one line, and place the citation action below its text. |
 
 Design tokens to preserve from `Docs/stitch/DESIGN.md`:
 
@@ -697,16 +703,16 @@ Design tokens to preserve from `Docs/stitch/DESIGN.md`:
 
 ### Functional requirements
 
-In `src/ui/app.py`:
+In `public/index.html`, `public/styles.css`, `public/app.js`, and `app.py`:
 
 - Welcome line and disclaimer badge.
 - Three example question buttons from `config/app.yaml`.
-- Chat input and answer display.
+- Chat input, `POST /api/answer`, and answer display.
 - Show exactly one citation link in every answer, rendered as the Stitch-style citation card.
 - Show `Last updated from sources:` line under every answer.
 - PII-blocked input is displayed only as `[redacted]`.
 - No raw `page_manifest.json` or `source_registry.yaml` dump on first load.
-- Reset Session clears chat history and the last answer.
+- Reset Session clears browser `localStorage` chat history and the last answer.
 
 Example questions:
 
@@ -716,17 +722,17 @@ Example questions:
 
 ### Answer rendering contract
 
-`answer_question(question, cfg)` remains the only generation entry point. The UI receives a validated answer log and renders it without changing its guardrails:
+`answer_question(question, cfg)` remains the only generation entry point. `POST /api/answer` serializes the validated answer and the static UI renders it without changing its guardrails:
 
-1. Strip the system-added citation/footer from `final_answer` for the visible body.
-2. Render the body as Markdown.
-3. Render one citation card using `result["citation"]`; verify it is in `registry.answer_citation_urls()` before linking.
+1. Strip the system-added citation/footer from `final_answer` with `clean_body()` for the visible `body`.
+2. Render the body as plain, pre-wrapped text.
+3. Render one citation card using `result["citation"]`; the API verifies it is in `registry.answer_citation_urls()` before returning it, and the browser allows only HTTPS `groww.in` links.
 4. Render the disclaimer and `Last updated from sources: <timestamp>` as captions.
-5. Put prompt, raw model output, validation flags, and selected chunk IDs inside a collapsed `View grounding metadata` expander.
+5. Put query ID, classification, outcome, generation mode, selected chunk IDs, citation, and validation flags inside a collapsed `View grounding metadata` section. The full prompt and raw model output remain available only through the read-only `Generation` inspector panel.
 
 ### Pipeline inspector
 
-Add a sidebar section that reads saved artifacts only:
+Add a sidebar section backed by `GET /api/inspect?panel=<panel>&query_id=<optional>` that reads saved artifacts only:
 
 | Panel | Reads |
 |---|---|
@@ -740,7 +746,7 @@ Add a sidebar section that reads saved artifacts only:
 | Generation | `final_prompt`, `raw_model_output`, `final_answer` from answer log |
 | Validation | `validation` object from answer log |
 
-The inspector defaults to `Answer`, does not recompute embeddings, and never calls the LLM.
+The inspector defaults to `Answer`, does not recompute embeddings, and never calls the LLM. On Vercel, logs are under `RAG_TMP_DIR` and are ephemeral.
 
 ### Done criteria
 
@@ -750,6 +756,44 @@ The inspector defaults to `Answer`, does not recompute embeddings, and never cal
 - PII-blocked input is shown as `[redacted]`.
 - Inspector shows all documented panels after a factual query.
 - No mock fact or unsupported source from the Stitch prototype appears in the app.
+
+### Vercel deployment parameters
+
+`vercel.json` pins the FastAPI function settings:
+
+```json
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "maxDuration": 300,
+      "excludeFiles": "{.env,.env.*,tests/**,Docs/**,logs/**/*.json,data/chroma_store/**,stitch_groww_investment_mobile_app.zip}"
+    }
+  }
+}
+```
+
+| Parameter | Value |
+|---|---|
+| Framework Preset | FastAPI (auto-detected) |
+| Root Directory | `.` |
+| Build Command | Empty |
+| Output Directory | Empty; `public/` is served automatically |
+| Install Command | Empty; `requirements.txt` is installed |
+| Python Version | `3.12` via `.python-version` |
+| Entry Function | `app.py` |
+| Max Duration | `300` seconds |
+| Memory | Set in the Vercel dashboard if needed |
+| Large Functions | Enable only if the Python bundle exceeds the limit |
+
+Environment variables:
+
+| Name | Purpose |
+|---|---|
+| `GROQ_API_KEY` | Enables live Groq answers; omit for extractive fallback |
+| `HF_TOKEN` | Optional; avoids Hugging Face rate limits |
+| `RAG_TMP_DIR` | `/tmp`; writable location for rebuilt Chroma and logs |
+| `PYTHONUNBUFFERED` | `1`; unbuffered runtime logs |
 
 ---
 
@@ -856,15 +900,15 @@ Never store the original PII-bearing query.
 ## Final Run Commands
 
 ```powershell
-python -m pip install -r requirements.txt
+py -3 -m pip install -r requirements.txt
 Copy-Item .env.example .env
 
-python -m src.pipeline verify
-python -m src.pipeline index
-python -m src.pipeline verify
+py -3 -m src.pipeline verify
+py -3 -m src.pipeline index
+py -3 -m src.pipeline verify
 
-pytest -q
-streamlit run src/ui/app.py
+py -3 -m unittest discover -s tests -v
+py -3 -m uvicorn app:app --reload
 ```
 
 ## Final Checklist

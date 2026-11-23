@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app.py": {
+      "maxDuration": 300,
+      "excludeFiles": "{.env,.env.*,tests/**,Docs/**,logs/**/*.json,data/chroma_store/**,stitch_groww_investment_mobile_app.zip}"
+    }
+  }
+}

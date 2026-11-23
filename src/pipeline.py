@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import subprocess
 import sys
 from pathlib import Path
 
@@ -85,15 +84,6 @@ def cmd_answer(cfg: AppConfig, question: str) -> None:
     print(f"\nanswer_log: {result['answer_log_path']}")
 
 
-def cmd_ui() -> None:
-    app_path = Path(__file__).resolve().parent / "ui" / "app.py"
-    raise SystemExit(
-        subprocess.call(
-            [sys.executable, "-m", "streamlit", "run", str(app_path)]
-        )
-    )
-
-
 def cmd_query(cfg: AppConfig, question: str) -> None:
     registry = build_registry(cfg)
     with Retriever(cfg, registry) as retriever:
@@ -150,7 +140,6 @@ def main() -> None:
             "store",
             "query",
             "answer",
-            "ui",
         ],
     )
 
@@ -184,8 +173,6 @@ def main() -> None:
                 'Provide a question: py -3 -m src.pipeline answer "..."'
             )
         cmd_answer(cfg, args.query)
-    elif args.command == "ui":
-        cmd_ui()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Groww MF Facts Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="brand"><span class="wordmark">Groww</span><span class="brand-dot"></span></div>
+      <span class="divider"></span>
+      <span class="app-title">MF Facts Assistant</span>
+      <span class="pill pill-teal desktop-only">✦ Strict Fact-Engine</span>
+    </div>
+    <div class="topbar-right">
+      <span class="pill pill-gray"><span class="beacon"></span><span id="grounding-text">Grounding Active</span></span>
+      <button id="reset-button" class="button button-quiet" type="button">Reset Session</button>
+      <button id="guidelines-button" class="button button-guide" type="button">Guidelines</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <section class="sidebar-section">
+        <div class="section-head">
+          <span class="section-title">Knowledge Sources</span>
+          <span id="verified-badge" class="verified-badge">5 Verified</span>
+        </div>
+        <p class="muted small">Real-time indexing strictly sourced from the five approved Groww pages.</p>
+        <div id="source-list" class="source-list"></div>
+        <div class="guardrail-card">
+          <div class="guardrail-title">✓ Zero Hallucination Filter</div>
+          <div class="guardrail-copy">Queries exceeding factual boundaries return a strict deflection without assumptions or speculation.</div>
+        </div>
+      </section>
+
+      <section class="sidebar-section inspector-section">
+        <div class="section-head"><span class="section-title">Pipeline Inspector</span></div>
+        <p class="muted small">Read-only artifacts. No recomputation and no LLM calls.</p>
+        <label class="field-label" for="inspector-panel">Artifact</label>
+        <select id="inspector-panel">
+          <option>Sources</option>
+          <option>Raw page</option>
+          <option>Chunks</option>
+          <option>Embeddings</option>
+          <option>Vector DB</option>
+          <option>Retrieval</option>
+          <option selected>Answer</option>
+          <option>Generation</option>
+          <option>Validation</option>
+        </select>
+        <div id="query-row" class="hidden query-row">
+          <label class="field-label" for="inspector-query">Query ID</label>
+          <input id="inspector-query" type="text" placeholder="Optional: last answer" />
+        </div>
+        <button id="inspector-refresh" class="button button-quiet full-width" type="button">Refresh Artifact</button>
+        <details class="artifact-details" open>
+          <summary>Artifact</summary>
+          <pre id="inspector-output">No answer artifact available yet.</pre>
+        </details>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <h1 id="page-title">Groww MF Facts Assistant</h1>
+        <p>Welcome! Ask a factual question about the five approved Groww mutual fund pages, or start with one of the pre-grounded examples below.</p>
+        <span id="disclaimer-badge" class="badge-disclaimer">ⓘ Facts-only. No investment advice.</span>
+      </section>
+
+      <section class="prompts-section">
+        <div class="section-label">Suggested Factual Inquiries</div>
+        <div id="example-list" class="prompt-grid"></div>
+      </section>
+
+      <div id="chat-stream" class="chat-stream" aria-live="polite"></div>
+
+      <form id="chat-form" class="input-dock">
+        <input id="question-input" type="text" maxlength="500" autocomplete="off" placeholder="Ask a factual question about expense ratios, exit loads, lock-ins..." />
+        <button id="send-button" type="submit">Send</button>
+      </form>
+      <p id="microcopy" class="microcopy">Grounding: 5 Approved AMC Indexes</p>
+      <p class="microcopy">Responses are strictly factual and non-promotional.</p>
+    </main>
+  </div>
+
+  <dialog id="guidelines-dialog" class="guidelines-dialog">
+    <div class="dialog-head">
+      <h2>Guidelines</h2>
+      <button id="guidelines-close" class="icon-button" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="dialog-body">
+      <h3>Grounding rules</h3>
+      <ul>
+        <li>Facts only from the five approved Groww pages.</li>
+        <li>Exactly one approved citation per answer.</li>
+        <li>No investment advice or return/performance claims.</li>
+        <li>PII is redacted before logging and retrieval.</li>
+      </ul>
+      <h3>Display rules</h3>
+      <ul>
+        <li>PII-blocked inputs appear only as <code>[redacted]</code>.</li>
+        <li>Every answer ends with a source timestamp.</li>
+        <li>The citation card is the single clickable source link.</li>
+      </ul>
+    </div>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>
