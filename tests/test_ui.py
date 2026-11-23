@@ -170,6 +170,19 @@ class UIAppTests(unittest.TestCase):
                 self.assertEqual(at.selectbox[0].value, "Answer")
                 self.assertNotIn("page_manifest.json", self.visible_values(at))
 
+    def test_header_has_no_avatar_and_is_mobile_responsive(self) -> None:
+        source = APP_PATH.read_text(encoding="utf-8")
+        self.assertNotIn("gw-avatar", source)
+        self.assertNotIn("gw-user-avatar", source)
+        self.assertNotIn(">AK<", source)
+        self.assertIn('st.popover("Guidelines"', source)
+        self.assertIn("white-space: nowrap", source)
+        self.assertIn("@media (max-width: 768px)", source)
+
+        at = AppTest.from_file(str(APP_PATH), default_timeout=30).run()
+        self.assertFalse(at.exception, [str(e.value) for e in at.exception])
+        self.assertNotIn("AK", self.visible_values(at))
+
     def test_pii_blocked_input_is_shown_only_as_redacted(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             answer = self.make_answer(Path(tmp), pii=True)

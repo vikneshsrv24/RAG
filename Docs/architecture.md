@@ -563,13 +563,14 @@ The Streamlit app implements the Stitch screen as follows:
 
 | Stitch region | Streamlit implementation |
 |---|---|
-| Top header | Custom CSS header with Groww wordmark, assistant title, `Strict Fact-Engine` pill, grounding status, `Reset Session`, `Guidelines`, avatar. |
+| Top header | Custom CSS header with Groww wordmark, assistant title, `Strict Fact-Engine` pill, grounding status, `Reset Session`, and a responsive `Guidelines` popover. No user avatar is rendered. |
 | Knowledge-sources sidebar | `st.sidebar` cards generated from `SourceRegistry.ingestible()`; `Zero Hallucination Filter` callout. |
 | Welcome hero + suggested prompts | Styled markdown block and three `st.button` prompts from `cfg.ui.examples`. |
 | Chat thread | `st.session_state.messages`; user bubble shows `[redacted]` for `pii_blocked`. |
 | Assistant answer card | Body from `clean_body(final_answer)`, one citation card from `result["citation"]`, footer caption, collapsed grounding metadata. |
 | Input dock | `st.chat_input` with grounding microcopy. |
 | Inspector | Sidebar `st.selectbox`, default `Answer`; raw YAML/JSON only inside expanders. |
+| Responsive layout | At `<= 768px`, Streamlit horizontal blocks wrap to full width, nonessential pills are hidden, and the `Guidelines` popover keeps its label on one line. |
 
 ### 12.2 Inspector panels
 

@@ -679,13 +679,14 @@ The Stitch prototype contains illustrative mock facts, invented source labels, a
 
 | Area | Required adaptation in `src/ui/app.py` |
 |---|---|
-| Top header | Groww wordmark + teal dot, `MF Facts Assistant`, `Strict Fact-Engine` pill, `Grounding Active: 5 Approved Sources` status, `Reset Session`, `Guidelines`, user avatar. |
+| Top header | Groww wordmark + teal dot, `MF Facts Assistant`, `Strict Fact-Engine` pill, `Grounding Active: 5 Approved Sources` status, `Reset Session`, and a pill-shaped `Guidelines` popover. Do not render a user avatar. |
 | Left sidebar | `Knowledge Sources` with `5 Verified` badge; one card per approved registry entry; `Zero Hallucination Filter` callout. Titles and URLs come from `config/source_registry.yaml`, never hard-coded. |
 | Welcome hero | `Welcome! Ask a factual question...` plus the `Facts-only. No investment advice.` badge. |
 | Suggested prompts | Three buttons from `cfg.ui.examples`. |
 | Assistant answer card | `Verified Scheme Fact` or `Refusal / Redirect` badge, answer body, one citation card with a single `Open Page` link, and `Last updated from sources:` footer. |
 | Input dock | Streamlit chat input plus microcopy: `Grounding: 5 Approved AMC Indexes` and `Responses are strictly factual and non-promotional.` |
 | Inspector | Read-only panel selector in the sidebar, defaulting to `Answer`. Raw source files are shown only inside collapsible sections of the `Sources` panel. |
+| Responsive behavior | At `<= 768px`, wrap horizontal blocks to full width, hide the `Strict Fact-Engine` pill, use `nowrap` for the `Guidelines` popover label, and allow the citation action to sit below its text. |
 
 Design tokens to preserve from `Docs/stitch/DESIGN.md`:
 

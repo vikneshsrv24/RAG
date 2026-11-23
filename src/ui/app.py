@@ -63,8 +63,21 @@ section[data-testid="stSidebar"] > div:first-child { padding-top: 1rem; }
 .gw-pill-teal { background: var(--gw-teal-light); color: var(--gw-teal-dark); border: 1px solid #A7F3D0; }
 .gw-pill-gray { background: var(--gw-gray-50); color: var(--gw-gray-600); border: 1px solid var(--gw-gray-200); }
 .gw-beacon { width: 7px; height: 7px; border-radius: 9999px; background: #10B981; box-shadow: 0 0 0 3px #D1FAE5; }
-.gw-avatar { width: 32px; height: 32px; border-radius: 9999px; background: var(--gw-indigo-light); color: var(--gw-indigo); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; border: 1px solid #C7D2FE; }
-.gw-guidelines { font-size: 12px; color: var(--gw-gray-600); font-weight: 500; }
+div[data-testid="stPopover"] button {
+  border-radius: 9999px;
+  border: 1px solid var(--gw-gray-200);
+  background: var(--gw-gray-50);
+  color: var(--gw-gray-600);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 13px;
+  white-space: nowrap;
+}
+div[data-testid="stPopover"] button:hover {
+  border-color: var(--gw-teal);
+  background: #F0FDF8;
+  color: var(--gw-teal-dark);
+}
 
 .gw-sidebar-title { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: var(--gw-gray-400); text-transform: uppercase; }
 .gw-verified { font-size: 11px; font-weight: 700; color: var(--gw-teal-dark); background: var(--gw-teal-light); border: 1px solid #A7F3D0; border-radius: 9999px; padding: 2px 8px; }
@@ -103,9 +116,8 @@ div[data-testid="stButton"] > button:hover {
   color: var(--gw-teal-dark);
 }
 
-.gw-user-row { display: flex; justify-content: flex-end; align-items: flex-start; gap: 10px; margin: 18px 0; }
-.gw-user-bubble { max-width: 72%; background: var(--gw-gray-100); color: var(--gw-dark); border: 1px solid var(--gw-gray-200); border-radius: 16px 16px 4px 16px; padding: 11px 14px; font-size: 14px; font-weight: 500; }
-.gw-user-avatar { width: 30px; height: 30px; border-radius: 9999px; background: var(--gw-indigo-light); color: var(--gw-indigo); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; border: 1px solid #C7D2FE; }
+.gw-user-row { display: flex; justify-content: flex-end; align-items: flex-start; margin: 18px 0; }
+.gw-user-bubble { max-width: 78%; background: var(--gw-gray-100); color: var(--gw-dark); border: 1px solid var(--gw-gray-200); border-radius: 16px 16px 4px 16px; padding: 11px 14px; font-size: 14px; font-weight: 500; }
 
 .gw-answer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--gw-gray-100); padding-bottom: 10px; margin-bottom: 12px; }
 .gw-badge-fact { display: inline-flex; align-items: center; gap: 6px; background: var(--gw-teal-light); color: #065F46; border-radius: 8px; padding: 4px 9px; font-size: 11px; font-weight: 700; }
@@ -126,6 +138,30 @@ div[data-testid="stChatInput"] textarea {
 div[data-testid="stChatInput"] textarea:focus {
   border-color: var(--gw-teal);
   box-shadow: 0 0 0 3px var(--gw-teal-light);
+}
+
+@media (max-width: 768px) {
+  div[data-testid="stHorizontalBlock"] {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  div[data-testid="stHorizontalBlock"] > div {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+  .gw-brand { flex-wrap: wrap; row-gap: 4px; }
+  .gw-pill-teal { display: none; }
+  .gw-wordmark { font-size: 20px; }
+  .gw-app-title { font-size: 13px; }
+  .gw-hero { padding-top: 12px; }
+  .gw-hero h1 { font-size: 26px; }
+  .gw-hero p { font-size: 14px; }
+  .gw-badge-disclaimer { font-size: 11px; }
+  .gw-user-bubble { max-width: 88%; }
+  .gw-citation { flex-direction: column; align-items: flex-start; }
+  .gw-citation a { white-space: nowrap; }
+  div[data-testid="stPopover"] button { width: 100%; }
 }
 </style>
 """
@@ -155,7 +191,6 @@ def user_bubble_html(text: str) -> str:
     return f"""
     <div class="gw-user-row">
       <div class="gw-user-bubble">{html.escape(text)}</div>
-      <div class="gw-user-avatar">AK</div>
     </div>
     """
 
@@ -313,7 +348,7 @@ def render_assistant(result: dict[str, Any]) -> None:
 
 
 # Header -------------------------------------------------------------------
-header_left, header_mid, header_right = st.columns([5, 3, 2], vertical_alignment="center")
+header_left, header_mid, header_right = st.columns([4, 3, 3], vertical_alignment="center")
 with header_left:
     st.markdown(
         '<div class="gw-brand">'
@@ -333,17 +368,22 @@ with header_mid:
         unsafe_allow_html=True,
     )
 with header_right:
-    reset_col, guide_col, avatar_col = st.columns([1.5, 1, 0.5])
+    reset_col, guide_col = st.columns([1, 1])
     with reset_col:
-        if st.button("Reset Session", key="reset_session"):
+        if st.button("Reset Session", key="reset_session", use_container_width=True):
             st.session_state.messages = []
             st.session_state.pop("last_result", None)
             st.session_state.pop("pending", None)
             st.rerun()
     with guide_col:
-        st.markdown('<span class="gw-guidelines">Guidelines</span>', unsafe_allow_html=True)
-    with avatar_col:
-        st.markdown('<span class="gw-avatar">AK</span>', unsafe_allow_html=True)
+        with st.popover("Guidelines", use_container_width=True):
+            st.markdown("**Grounding rules**")
+            st.markdown(
+                "- Facts only from the five approved Groww pages.\n"
+                "- Exactly one approved citation per answer.\n"
+                "- No investment advice or return/performance claims.\n"
+                "- PII is redacted before logging and retrieval."
+            )
 
 st.markdown("---")
 
