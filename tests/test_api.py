@@ -18,9 +18,15 @@ class ApiTests(unittest.TestCase):
         cls.client = TestClient(api_app.app)
 
     def test_health(self) -> None:
-        response = self.client.get("/api/health")
-        self.assertEqual(response.status_code, 200)
-        self.assertTrue(response.json()["ok"])
+        for path in ["/api/health", "/api", "/health"]:
+            with self.subTest(path=path):
+                response = self.client.get(path)
+                self.assertEqual(response.status_code, 200)
+                self.assertTrue(response.json()["ok"])
+
+    def test_favicon_does_not_404(self) -> None:
+        response = self.client.get("/favicon.ico")
+        self.assertEqual(response.status_code, 204)
 
     def test_sources_contains_exactly_five_ingestible_sources(self) -> None:
         response = self.client.get("/api/sources")

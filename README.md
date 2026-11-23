@@ -38,7 +38,7 @@ Endpoints:
 | Endpoint | Purpose |
 |---|---|
 | `GET /` | Static Stitch-based UI |
-| `GET /api/health` | Health check |
+| `GET /api/health` | Health check; `/health` and `/api` are aliases |
 | `GET /api/sources` | Approved source cards, title, examples, disclaimer |
 | `POST /api/answer` | Submit `{"question": "..."}` and receive a validated answer |
 | `GET /api/inspect` | Read-only pipeline artifacts; `panel` and optional `query_id` |

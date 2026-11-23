@@ -11,7 +11,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 import numpy as np
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Response
 from pydantic import BaseModel, Field
 
 from src.config import AppConfig, load_config
@@ -310,8 +310,14 @@ def _inspect(panel: str, query_id: str | None) -> dict[str, Any]:
 
 @app.get("/api")
 @app.get("/api/health")
+@app.get("/health")
 def health() -> dict[str, Any]:
     return {"ok": True, "service": app.title}
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon() -> Response:
+    return Response(status_code=204)
 
 
 @app.get("/api/sources")
