@@ -1,13 +1,11 @@
---extra-index-url https://download.pytorch.org/whl/cpu
-
 httpx
 beautifulsoup4
 lxml
 PyYAML
 python-dotenv
 numpy
-torch==2.15.0+cpu
-sentence-transformers
+onnxruntime
+tokenizers
 chromadb
 groq
 fastapi>=0.117.1

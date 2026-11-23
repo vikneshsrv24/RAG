@@ -38,7 +38,7 @@ flowchart LR
     U[Retail user / support team / reviewer] --> UI[FAQ UI + Pipeline Inspector]
     UI --> APP[RAG Application]
     APP -->|fetch exactly 5 approved pages| GW[Groww public pages]
-    APP -->|embed chunks / embed queries| EMB[sentence-transformers/all-MiniLM-L6-v2]
+    APP -->|embed chunks / embed queries| EMB[all-MiniLM-L6-v2 via ONNX Runtime]
     APP -->|persist + query| CHROMA[(ChromaDB local store)]
     APP -->|generate answers| LLM[Groq default<br/>qwen/qwen3.8-27b<br/>alternate providers configurable]
     APP --> ART[(Filesystem artifacts<br/>raw pages, chunks, embeddings, logs)]
@@ -50,7 +50,7 @@ flowchart LR
 External dependencies:
 
 - **Groww public pages:** read-only, five URLs, no link following.
-- **Embedding model:** local sentence-transformers model.
+- **Embedding model:** local MiniLM model exported to ONNX.
 - **Vector DB:** Chroma, persisted on disk.
 - **LLM provider:** Groq by default; Gemini/OpenAI/Anthropic/Mistral selectable via config.
 - **Filesystem:** artifact and log storage for demo inspection.
@@ -599,8 +599,8 @@ The UI is a static frontend using the Stitch design tokens and component anatomy
 | Cold start | Chroma is rebuilt from committed `data/chunks/` and `data/embeddings/vectors.npy` into `RAG_TMP_DIR` |
 | Secrets | `GROQ_API_KEY` and optional `HF_TOKEN` come from Vercel environment variables; `.env` is never committed |
 | Logs | Retrieval and answer logs are written under the ephemeral temp directory on Vercel |
-| Bundle | `vercel.json` excludes generated logs, local Chroma data, raw pages, tests, docs, and `.env`; `requirements.txt` pins CPU-only `torch` so CUDA wheels are never bundled |
-| Function size | CPU-only PyTorch still exceeds the standard 500 MB Python limit; `VERCEL_SUPPORT_LARGE_FUNCTIONS=1` enables the 5 GB Large Functions path |
+| Bundle | `vercel.json` excludes generated logs, local Chroma data, raw pages, tests, docs, and `.env`; `requirements.txt` omits `torch` and `sentence-transformers` entirely |
+| Function size | Query embedding uses committed ONNX artifacts (~88 MB) with `onnxruntime` and `tokenizers`, keeping the bundle under the standard 500 MB Python limit |
 
 ---
 
@@ -608,11 +608,11 @@ The UI is a static frontend using the Stitch design tokens and component anatomy
 
 | Layer | Choice | Rationale |
 |---|---|---|
-| Language | Python | sentence-transformers, Chroma, LLM SDKs are Python-first |
+| Language | Python | ONNX Runtime, Chroma, and LLM SDKs are Python-first |
 | Config | YAML + `.env` | Human-editable config, secrets separated |
 | Fetch/parse | `requests`/`httpx` + HTML parser | Only five static public pages |
 | Chunking | Custom structure-aware splitter | Needs scheme isolation and table/key-value preservation |
-| Embedding | `sentence-transformers/all-MiniLM-L6-v2` | Specified in brief; small and local |
+| Embedding | `sentence-transformers/all-MiniLM-L6-v2`, exported to ONNX | Specified in brief; ONNX keeps deployment small and framework-free |
 | Vector DB | ChromaDB | Specified in brief; local persistence for demo |
 | LLM | Groq `qwen/qwen3.8-27b` default | Specified in brief; provider abstraction for alternates |
 | UI | Static Stitch-based frontend + FastAPI function | Vercel-native deployment with no stateful UI server |

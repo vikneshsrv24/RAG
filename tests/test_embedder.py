@@ -41,6 +41,7 @@ def make_cfg(tmp_path: Path) -> SimpleNamespace:
     )
 
     return SimpleNamespace(
+        root=tmp_path,
         embedding={
             "model": "sentence-transformers/all-MiniLM-L6-v2",
             "device": "cpu",
@@ -59,7 +60,7 @@ class EmbedderTests(unittest.TestCase):
     def test_run_embedder_writes_vectors_and_manifest(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             cfg = make_cfg(Path(tmp))
-            with patch.object(embedder, "SentenceTransformer", FakeModel):
+            with patch.object(embedder, "make_encoder", return_value=FakeModel(cfg.embedding["model"])):
                 manifest = embedder.run_embedder(cfg)
 
             vectors = np.load(cfg.paths.vector_file)
@@ -78,7 +79,7 @@ class EmbedderTests(unittest.TestCase):
     def test_manifest_model_mismatch_raises(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             cfg = make_cfg(Path(tmp))
-            with patch.object(embedder, "SentenceTransformer", FakeModel):
+            with patch.object(embedder, "make_encoder", return_value=FakeModel(cfg.embedding["model"])):
                 embedder.run_embedder(cfg)
 
             cfg.embedding["model"] = "sentence-transformers/other-model"
@@ -88,7 +89,7 @@ class EmbedderTests(unittest.TestCase):
     def test_vector_count_mismatch_raises(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             cfg = make_cfg(Path(tmp))
-            with patch.object(embedder, "SentenceTransformer", FakeModel):
+            with patch.object(embedder, "make_encoder", return_value=FakeModel(cfg.embedding["model"])):
                 embedder.run_embedder(cfg)
 
             manifest = json.loads(cfg.paths.embedding_manifest.read_text(encoding="utf-8"))
@@ -100,6 +101,14 @@ class EmbedderTests(unittest.TestCase):
 
             with self.assertRaises(RuntimeError):
                 embedder.assert_embedding_consistent(cfg)
+
+    def test_onnx_encoder_returns_normalized_384_dim_vectors(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        encoder = embedder.OnnxEncoder(root / "models" / "minilm")
+        vectors = encoder.encode(["hello", "a longer sentence about mutual funds"])
+        self.assertEqual(vectors.shape, (2, 384))
+        norms = np.linalg.norm(vectors, axis=1)
+        np.testing.assert_allclose(norms, np.ones(2), atol=1e-5)
 
 
 if __name__ == "__main__":

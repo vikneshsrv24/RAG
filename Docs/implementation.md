@@ -97,12 +97,12 @@ lxml
 PyYAML
 python-dotenv
 numpy
-sentence-transformers
+onnxruntime
+tokenizers
 chromadb
 groq
 fastapi>=0.117.1
 uvicorn>=0.35.0
-pytest
 ```
 
 ### Minimal config
@@ -112,6 +112,8 @@ pytest
 ```yaml
 embedding:
   model: sentence-transformers/all-MiniLM-L6-v2
+  onnx_dir: models/minilm
+  max_seq_length: 256
 
 vector_db:
   collection: groww_mf_faq
@@ -784,19 +786,15 @@ The inspector defaults to `Answer`, does not recompute embeddings, and never cal
 | Entry Function | `app.py` |
 | Max Duration | `300` seconds |
 | Memory | Set in the Vercel dashboard if needed |
-| Large Functions | Enable; the CPU-only PyTorch bundle still exceeds the standard 500 MB Python limit |
+| Large Functions | Not required; the ONNX-based bundle fits the standard 500 MB Python limit |
 
-`requirements.txt` pins `torch==2.15.0+cpu` and includes `--extra-index-url https://download.pytorch.org/whl/cpu`. Without this, Vercel resolves the CUDA-enabled Linux wheel from PyPI and the bundle grows to roughly 5.8 GB, failing with `LAMBDA_SIZE_EXCEEDED`.
+Embeddings are produced by a committed ONNX export of `sentence-transformers/all-MiniLM-L6-v2` in `models/minilm/`. At runtime, `tokenizers` prepares the inputs and `onnxruntime` runs the encoder; mean pooling and L2 normalization are applied in NumPy. `torch`, `sentence-transformers`, and `transformers` are no longer runtime dependencies, so Vercel never downloads CUDA wheels. The ONNX output differs from the original SentenceTransformer by at most `2e-7` in verification, so the existing 384-dimension `vectors.npy` and Chroma rebuild remain compatible.
 
 Environment variables:
 
 | Name | Purpose |
 |---|---|
-| `VERCEL_SUPPORT_LARGE_FUNCTIONS` | `1`; enables bundles up to 5 GB on eligible projects |
-| `UV_TORCH_BACKEND` | `cpu`; makes `uv` resolve CPU-only PyTorch |
-| `UV_EXTRA_INDEX_URL` | CPU wheel index fallback for older `uv` builds |
 | `GROQ_API_KEY` | Enables live Groq answers; omit for extractive fallback |
-| `HF_TOKEN` | Optional; avoids Hugging Face rate limits |
 | `RAG_TMP_DIR` | `/tmp`; writable location for rebuilt Chroma and logs |
 | `PYTHONUNBUFFERED` | `1`; unbuffered runtime logs |
 

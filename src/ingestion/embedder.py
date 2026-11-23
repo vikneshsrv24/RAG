@@ -8,7 +8,8 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+import onnxruntime as ort
+from tokenizers import Tokenizer
 
 from src.config import AppConfig
 
@@ -48,11 +49,69 @@ def load_chunks(cfg: AppConfig) -> list[dict[str, Any]]:
     return chunks
 
 
-def make_encoder(cfg: AppConfig) -> SentenceTransformer:
-    return SentenceTransformer(
-        cfg.embedding["model"],
-        device=cfg.embedding.get("device", "cpu"),
-    )
+class OnnxEncoder:
+    """Small CPU encoder that reproduces the MiniLM SentenceTransformer vectors."""
+
+    def __init__(self, model_dir: Path, max_length: int = 256):
+        tokenizer_path = model_dir / "tokenizer.json"
+        model_path = model_dir / "model.onnx"
+        if not tokenizer_path.exists() or not model_path.exists():
+            raise FileNotFoundError(f"Missing ONNX encoder artifacts in {model_dir}")
+
+        self._tokenizer = Tokenizer.from_file(str(tokenizer_path))
+        self._tokenizer.enable_truncation(max_length=max_length)
+        self._tokenizer.enable_padding(
+            pad_id=self._tokenizer.token_to_id("[PAD]"),
+            pad_token="[PAD]",
+        )
+        self._session = ort.InferenceSession(
+            str(model_path),
+            providers=["CPUExecutionProvider"],
+        )
+        self._input_names = [item.name for item in self._session.get_inputs()]
+
+    def encode(
+        self,
+        texts,
+        *,
+        batch_size: int = 32,
+        normalize_embeddings: bool = True,
+        convert_to_numpy: bool = True,
+        show_progress_bar: bool = False,
+    ):
+        items = list(texts)
+        if not items:
+            return np.empty((0, 384), dtype=np.float32)
+
+        batches: list[np.ndarray] = []
+        for start in range(0, len(items), batch_size):
+            encodings = self._tokenizer.encode_batch(items[start : start + batch_size])
+            feed = {
+                "input_ids": np.asarray([e.ids for e in encodings], dtype=np.int64),
+                "attention_mask": np.asarray(
+                    [e.attention_mask for e in encodings], dtype=np.int64
+                ),
+                "token_type_ids": np.asarray([e.type_ids for e in encodings], dtype=np.int64),
+            }
+            hidden = self._session.run(
+                None, {name: feed[name] for name in self._input_names}
+            )[0]
+            mask = feed["attention_mask"][..., None].astype(np.float32)
+            pooled = (hidden.astype(np.float32) * mask).sum(axis=1) / np.clip(
+                mask.sum(axis=1), 1e-9, None
+            )
+            if normalize_embeddings:
+                pooled /= np.linalg.norm(pooled, axis=1, keepdims=True)
+            batches.append(pooled)
+
+        vectors = np.concatenate(batches, axis=0).astype(np.float32)
+        return vectors if convert_to_numpy else vectors.tolist()
+
+
+def make_encoder(cfg: AppConfig) -> OnnxEncoder:
+    model_dir = cfg.root / str(cfg.embedding.get("onnx_dir", "models/minilm"))
+    max_length = int(cfg.embedding.get("max_seq_length", 256))
+    return OnnxEncoder(model_dir, max_length=max_length)
 
 
 def run_embedder(cfg: AppConfig) -> dict:

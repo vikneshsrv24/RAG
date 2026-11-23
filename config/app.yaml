@@ -1,5 +1,7 @@
 embedding:
   model: sentence-transformers/all-MiniLM-L6-v2
+  onnx_dir: models/minilm
+  max_seq_length: 256
   device: cpu
   normalize: true
 
