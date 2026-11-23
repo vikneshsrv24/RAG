@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_amc_overview__list_of_hdfc_mutual_fund_in_india__0003",
+  "page_id": "hdfc_amc_overview",
+  "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+  "category": "amc",
+  "scheme": "",
+  "section": "List of HDFC Mutual Fund in India",
+  "char_start": 0,
+  "char_end": 722,
+  "fetch_timestamp": "2026-11-23T07:12:07Z",
+  "content_hash": "sha256:f1f7bbd11b15d34e08201588cf7702ad01dbe4027a5d441fae2deb879b0ff3fc",
+  "text": "ap Fund\nEquity\nVery High\n232.52\n0.73\n3.0%\n15.9%\n18.5%\n22.4%\n18.0%\n4\n₹1,00,687\nExit load of 1% if redeemed within 1 year.\nHDFC NIFTY 50 Index Fund\nEquity\nVery High\n252.61\n0.29\n-0.8%\n10.4%\n8.7%\n12.5%\n13.3%\n2\n₹22,727\nExit load of 0.25% if redeemed within 3 days\nHDFC Small Cap Fund\nEquity\nVery High\n156.23\n0.79\n-3.6%\n8.7%\n13.9%\n20.9%\n18.0%\n2\n₹38,960\nExit load of 1% if redeemed within 1 year\nHDFC Balanced Advantage Fund\nHybrid\nVery High\n590.81\n0.76\n1.7%\n11.8%\n14.7%\n15.9%\n14.2%\n5\n₹1,01,431\nExit Load for units in excess of 15% of the investment,1% will be charged for redemption within 1 year. See more\nHDFC Multi Cap Fund\nEquity\nVery High\n20.27\n0.95\n-0.6%\n11.6%\n--\n--\n--\n2\n₹19,080\nExit load of 1% if redeemed within 1 year.",
+  "fact_hints": [
+    "exit_load"
+  ]
+}

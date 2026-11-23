@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0027",
+  "page_id": "hdfc_amc_overview",
+  "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+  "category": "amc",
+  "scheme": "",
+  "section": "View Mutual Funds from Other AMCs",
+  "char_start": 0,
+  "char_end": 900,
+  "fetch_timestamp": "2026-11-23T07:12:07Z",
+  "content_hash": "sha256:f1f7bbd11b15d34e08201588cf7702ad01dbe4027a5d441fae2deb879b0ff3fc",
+  "text": "100 Index\nS&P 500\nNIFTY NEXT 50\nNIFTY Metal\nDAX Index\nNIFTY Fin Service\nCAC Index\nNifty Pvt Bank\nNIFTY Bank Options\nSBI Options\nBajaj Finance Options\nAxis Bank Options\nHindustan Unilever Options\nNIFTY Bank Futures\nFinnifty Futures\nITC Futures\nICICI Bank Futures\nBiocon Futures\nIndusind Bank Futures\nCrude Oil Mini Future Price\nGold Petal Future Price\nSilver Micro Future Price\nNickel Future Price\nNatural Gas Mini MCX Option Chain\nCopper MCX Option Chain\nNIFTY 50 Options\nHDFC Bank Options\nWipro  Options\nDLF Options\nREC  Options\nYes Bank Futures\nZomato Futures\nAshok Leyland Futures\nHDFC Bank Futures\nUPL Futures\nAdani Enterprises Futures\nGold Future Price\nNatural Gas Future Price\nZinc Future Price\nGold MCX Option Chain\nGold Mini MCX Option Chain\nCommodities Expiry Calendar\nBse Sensex Options\nTata Steel Options\nNTPC Options\nBajaj Auto Options\nIndusind Bank Options\nTata Motors Futures\nInfosys Fu",
+  "fact_hints": [
+    "expense_ratio"
+  ]
+}

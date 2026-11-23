@@ -1,0 +1,51 @@
+sources:
+  - page_id: hdfc_amc_overview
+    title: HDFC Mutual Fund AMC Overview
+    url: https://groww.in/mutual-funds/amc/hdfc-mutual-funds
+    category: amc
+    scheme: ""
+    role: ingested
+    allowed_use: answer_citation
+
+  - page_id: hdfc_large_cap_direct_growth
+    title: HDFC Large Cap Fund Direct Growth
+    url: https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth
+    category: scheme
+    scheme: HDFC Large Cap Fund Direct Growth
+    role: ingested
+    allowed_use: answer_citation
+
+  - page_id: hdfc_flexi_cap_direct_growth
+    title: HDFC Flexi Cap Direct Plan Growth
+    url: https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth
+    category: scheme
+    scheme: HDFC Flexi Cap Direct Plan Growth
+    role: ingested
+    allowed_use: answer_citation
+
+  - page_id: hdfc_elss_tax_saver_direct_growth
+    title: HDFC ELSS Tax Saver Fund Direct Plan Growth
+    url: https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth
+    category: scheme
+    scheme: HDFC ELSS Tax Saver Fund Direct Plan Growth
+    role: ingested
+    allowed_use: answer_citation
+
+  - page_id: hdfc_mid_cap_direct_growth
+    title: HDFC Mid Cap Fund Direct Growth
+    url: https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth
+    category: scheme
+    scheme: HDFC Mid Cap Fund Direct Growth
+    role: ingested
+    allowed_use: answer_citation
+
+  # Add official Groww/AMC/SEBI/AMFI URLs here later to reach 15-25 total.
+  # These must NOT be scraped or used as factual answer citations.
+  # Template:
+  # - page_id: official_reference_01
+  #   title: Official Reference
+  #   url: https://example.org/official-page
+  #   category: reference
+  #   scheme: ""
+  #   role: reference
+  #   allowed_use: refusal_link

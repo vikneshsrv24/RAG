@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__exit_load_stamp_duty_and_tax__0013",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Exit load, stamp duty and tax",
+  "char_start": 0,
+  "char_end": 155,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "Exit load, stamp duty and tax\nExit load\nExit load of 1% if redeemed within 1 year\nStamp duty on investment:\n0.005% (from July 1st, 2020)\nfrom July 1st 2020",
+  "fact_hints": [
+    "exit_load"
+  ]
+}

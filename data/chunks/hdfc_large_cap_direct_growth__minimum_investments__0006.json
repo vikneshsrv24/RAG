@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_large_cap_direct_growth__minimum_investments__0006",
+  "page_id": "hdfc_large_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Large Cap Fund Direct Growth",
+  "section": "Minimum investments",
+  "char_start": 0,
+  "char_end": 95,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:5637f5dcca229072934152c913a6b6a86e1c3ed8acdc8585c20b052f54a03da9",
+  "text": "Minimum investments\nMin. for 1st investment\n₹100\nMin. for 2nd investment\n₹100\nMin. for SIP\n₹100",
+  "fact_hints": [
+    "minimum_sip"
+  ]
+}

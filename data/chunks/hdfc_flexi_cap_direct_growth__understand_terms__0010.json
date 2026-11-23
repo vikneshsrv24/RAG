@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__understand_terms__0010",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Understand terms",
+  "char_start": 0,
+  "char_end": 175,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "Understand terms\nAnnualised returns\nAverage of the yearly returns of a mutual fund over a given period. Absolute returns\nThe total return of a mutual fund over a given period.",
+  "fact_hints": [
+    "expense_ratio"
+  ]
+}

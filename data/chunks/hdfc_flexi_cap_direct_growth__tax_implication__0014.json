@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__tax_implication__0014",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Tax implication",
+  "char_start": 0,
+  "char_end": 189,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "Tax implication\nIf you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%. Check past data",
+  "fact_hints": [
+    "expense_ratio"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-11-23T07:12:09Z",
+  "expected_count": 5,
+  "success_count": 5,
+  "pages": [
+    {
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "category": "amc",
+      "scheme": "",
+      "fetch_timestamp": "2026-11-23T07:12:07Z",
+      "http_status": 200,
+      "content_hash": "sha256:f1f7bbd11b15d34e08201588cf7702ad01dbe4027a5d441fae2deb879b0ff3fc",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "category": "scheme",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "fetch_timestamp": "2026-11-23T07:12:08Z",
+      "http_status": 200,
+      "content_hash": "sha256:5637f5dcca229072934152c913a6b6a86e1c3ed8acdc8585c20b052f54a03da9",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "category": "scheme",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "fetch_timestamp": "2026-11-23T07:12:08Z",
+      "http_status": 200,
+      "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "category": "scheme",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "fetch_timestamp": "2026-11-23T07:12:09Z",
+      "http_status": 200,
+      "content_hash": "sha256:cbdfab8dbb8226f3a0bb476cb2ab1d2b62d287b926bf4cd6e259f781bc84f0ce",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "category": "scheme",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "fetch_timestamp": "2026-11-23T07:12:09Z",
+      "http_status": 200,
+      "content_hash": "sha256:6426bb6777a21ccecd98ecbd5750ad4d00bc65861ad8f03809f0ae365e8d9aaa",
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

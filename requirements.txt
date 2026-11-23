@@ -1,0 +1,11 @@
+httpx
+beautifulsoup4
+lxml
+PyYAML
+python-dotenv
+numpy
+sentence-transformers
+chromadb
+groq
+streamlit
+pytest

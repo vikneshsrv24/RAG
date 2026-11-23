@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_amc_overview__tables_and_lists__0037",
+  "page_id": "hdfc_amc_overview",
+  "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+  "category": "amc",
+  "scheme": "",
+  "section": "Tables and Lists",
+  "char_start": 0,
+  "char_end": 439,
+  "fetch_timestamp": "2026-11-23T07:12:07Z",
+  "content_hash": "sha256:f1f7bbd11b15d34e08201588cf7702ad01dbe4027a5d441fae2deb879b0ff3fc",
+  "text": "y | Very High | 20.99 | 1.13 | 12.2% | 24.4% | -- | -- | -- | -- | ₹2,004 | Exit load of 1%, if redeemed within 30 days.\nHDFC Large & Mid Cap Fund | Equity | Very High | 377.08 | 0.91 | 1.7% | 13.2% | 14.0% | 18.2% | 15.6% | 3 | ₹28,087 | Exit load of 1% if redeemed within 1 year\nHDFC Manufacturing Fund | Equity | Very High | 12.33 | 0.94 | 8.3% | -- | -- | -- | -- | -- | ₹9,726 | Exit load of 1%, if redeemed within 1 month. View All |",
+  "fact_hints": [
+    "exit_load"
+  ]
+}

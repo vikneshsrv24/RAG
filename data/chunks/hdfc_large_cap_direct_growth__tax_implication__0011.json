@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_large_cap_direct_growth__tax_implication__0011",
+  "page_id": "hdfc_large_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Large Cap Fund Direct Growth",
+  "section": "Tax implication",
+  "char_start": 0,
+  "char_end": 189,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:5637f5dcca229072934152c913a6b6a86e1c3ed8acdc8585c20b052f54a03da9",
+  "text": "Tax implication\nIf you redeem within one year, returns are taxed at 20%. If you redeem after one year, returns exceeding Rs 1.25 lakh in a financial year are taxed at 12.5%. Check past data",
+  "fact_hints": [
+    "expense_ratio"
+  ]
+}

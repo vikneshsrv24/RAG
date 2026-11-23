@@ -1,0 +1,17 @@
+{
+  "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0030",
+  "page_id": "hdfc_amc_overview",
+  "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+  "category": "amc",
+  "scheme": "",
+  "section": "View Mutual Funds from Other AMCs",
+  "char_start": 0,
+  "char_end": 900,
+  "fetch_timestamp": "2026-11-23T07:12:07Z",
+  "content_hash": "sha256:f1f7bbd11b15d34e08201588cf7702ad01dbe4027a5d441fae2deb879b0ff3fc",
+  "text": "ticap Fund\nICICI Prudential Infrastructure Fund\nBandhan Nifty Alpha 50 Index Fund\nSBI\nQuant\nMirae Asset\nDSP\nBaroda BNP Paribas\nMahindra Manulife\nSundaram\nSamco\nTaurus\nMutual Fund Houses\nBest Hybrid Mutual funds\nBest ELSS Mutual funds\nBest Dividend Yield Mutual funds\nNippon India Small Cap Fund\nHDFC Flexi Cap Fund\nTata Small Cap Fund\nTata Ethical Fund\nMirae Asset ELSS Tax Saver Fund\nQuant Infrastructure Fund\nHDFC\nPPFAS\nUTI\nKotak Mahindra\nZerodha\nInvesco\nNavi\nPGIM\nMutual Funds Categories\nBest MidCap Mutual funds\nBest Sectoral Mutual funds\nBest Aggressive Hybrid Mutual funds\nQuant Small Cap Fund\nSBI Magnum Children's Benefit Fund\nUTI Nifty 50 Index Fund\nJM Flexicap Fund\nHSBC Small Cap Fund\nFranklin India Multi Cap Fund\nICICI Prudential\nLIC\nCanara Robeco\nWhiteoak\nFranklin Templeton\nNJ\nJM\n360 One\nInternational\nSilver\nMidcap\nLiquid\nDebt\nIndex\nBank Nifty\nNifty IT\nEquity\nNifty 50\nNifty Metal\nNif",
+  "fact_hints": [
+    "expense_ratio",
+    "lock_in"
+  ]
+}

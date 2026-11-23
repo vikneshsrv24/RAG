@@ -1,0 +1,17 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0021",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Fund management",
+  "char_start": 0,
+  "char_end": 200,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "2026 is ₹2,427.51. The HDFC Flexi Cap Direct Plan Growth is rated Very High risk. Minimum SIP Investment is set to ₹100.\nMinimum Lumpsum Investment is ₹100. Exit load of 1% if redeemed within 1 year\n;",
+  "fact_hints": [
+    "exit_load",
+    "minimum_sip"
+  ]
+}

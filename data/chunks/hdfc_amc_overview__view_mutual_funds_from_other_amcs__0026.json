@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0026",
+  "page_id": "hdfc_amc_overview",
+  "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+  "category": "amc",
+  "scheme": "",
+  "section": "View Mutual Funds from Other AMCs",
+  "char_start": 0,
+  "char_end": 900,
+  "fetch_timestamp": "2026-11-23T07:12:07Z",
+  "content_hash": "sha256:f1f7bbd11b15d34e08201588cf7702ad01dbe4027a5d441fae2deb879b0ff3fc",
+  "text": "Version:\n8.2.2\nShare Market\nIndices\nF&O\nMutual Funds\nETFs\nFunds By Groww\nCalculators\nIPO\nMiscellaneous\nTop Gainers Stocks\n52 Weeks High Stocks\nTata Motors\nNHPC\nITC\nWipro\nBSE\nNTPC\nTop Losers Stocks\n52 Weeks Low Stocks\nIREDA\nState Bank of India\nAdani Power\nCDSL\nCochin Shipyard\nSJVN\nMost Traded Stocks\nStocks Market Calender\nTata Steel\nTata Power\nBharat Heavy Electricals\nIndian Oil Corporation\nHUDCO\nSAIL\nStocks Feed\nSuzlon Energy\nZomato (Eternal)\nYes Bank\nInfosys\nNBCC\nIRCTC\nShare Market Live Update\nFII DII Activity\nIRFC\nBharat Electronics\nHDFC Bank\nVedanta\nReliance Power\nJaiprakash Power Ventures\nStocks Sectors\nNIFTY 50\nNIFTY Midcap 100\nNIFTY 100\nUS Tech 100\nNIFTY Realty\nNikkei index\nSENSEX\nNIFTY Smallcap 100\nNIFTY Auto\nDow Jones Futures\nNIFTY PSU Bank\nNIFTY FMCG\nNIFTY BANK\nNIFTY MIDCAP 150\nKOSPI Index\nDow Jones Index\nGift Nifty\nBSE BANKEX\nIndia VIX\nNIFTY Pharma\nHANG SENG Index\nBSE 100\nFTSE ",
+  "fact_hints": [
+    "expense_ratio"
+  ]
+}

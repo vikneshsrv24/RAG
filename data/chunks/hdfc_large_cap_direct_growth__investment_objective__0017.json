@@ -1,0 +1,17 @@
+{
+  "chunk_id": "hdfc_large_cap_direct_growth__investment_objective__0017",
+  "page_id": "hdfc_large_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Large Cap Fund Direct Growth",
+  "section": "Investment Objective",
+  "char_start": 0,
+  "char_end": 214,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:5637f5dcca229072934152c913a6b6a86e1c3ed8acdc8585c20b052f54a03da9",
+  "text": "Investment Objective\nThe scheme seeks to provide long-term capital appreciation/income by investing predominantly in Large-Cap companies. Fund benchmark\nNIFTY 100 Total Return Index\nScheme Information Document(SID)",
+  "fact_hints": [
+    "expense_ratio",
+    "benchmark"
+  ]
+}

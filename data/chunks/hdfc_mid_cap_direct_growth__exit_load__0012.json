@@ -1,0 +1,17 @@
+{
+  "chunk_id": "hdfc_mid_cap_direct_growth__exit_load__0012",
+  "page_id": "hdfc_mid_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Mid Cap Fund Direct Growth",
+  "section": "Exit Load",
+  "char_start": 0,
+  "char_end": 307,
+  "fetch_timestamp": "2026-11-23T07:12:09Z",
+  "content_hash": "sha256:6426bb6777a21ccecd98ecbd5750ad4d00bc65861ad8f03809f0ae365e8d9aaa",
+  "text": "Exit load\nA fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment. Stamp duty\nA form of tax payable for the purchase or sale of an asset or security. Exit Load\n01 Jan 2013\nExit load of 1% if redeemed within 1 year.",
+  "fact_hints": [
+    "expense_ratio",
+    "exit_load"
+  ]
+}

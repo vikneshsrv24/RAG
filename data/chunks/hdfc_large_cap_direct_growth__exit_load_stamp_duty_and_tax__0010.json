@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_large_cap_direct_growth__exit_load_stamp_duty_and_tax__0010",
+  "page_id": "hdfc_large_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Large Cap Fund Direct Growth",
+  "section": "Exit load, stamp duty and tax",
+  "char_start": 0,
+  "char_end": 155,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:5637f5dcca229072934152c913a6b6a86e1c3ed8acdc8585c20b052f54a03da9",
+  "text": "Exit load, stamp duty and tax\nExit load\nExit load of 1% if redeemed within 1 year\nStamp duty on investment:\n0.005% (from July 1st, 2020)\nfrom July 1st 2020",
+  "fact_hints": [
+    "exit_load"
+  ]
+}

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Groww MF Facts Assistant</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            growwTeal: {
+              DEFAULT: '#00D09C',
+              hover: '#00ba8b',
+              light: '#E6FAF5',
+              dark: '#008e6b'
+            },
+            growwIndigo: {
+              DEFAULT: '#5367FF',
+              hover: '#4255ec',
+              light: '#EFF2FF'
+            },
+            growwDark: '#22252A',
+            growwGray: {
+              50: '#F9FAFB',
+              100: '#F3F4F6',
+              200: '#E5E7EB',
+              400: '#9CA3AF',
+              600: '#4B5563',
+              700: '#374151'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Page Styles -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle custom scrollbar for chat & panels */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E5E7EB;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D1D5DB;
+    }
+  </style>
+<style data-purpose="animations">
+    /* Subtle pulse animation for live RAG verification beacon */
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+    .status-beacon {
+      animation: pulse-soft 2.5s infinite ease-in-out;
+    }
+  </style>
+<!-- END: Custom Page Styles -->
+</head>
+<body class="bg-white text-growwDark antialiased font-sans h-screen flex flex-col overflow-hidden selection:bg-growwTeal-light selection:text-growwDark">
+<!-- BEGIN: Top Navigation Header -->
+<header class="h-16 border-b border-growwGray-200 bg-white px-6 flex items-center justify-between shrink-0 z-20">
+<!-- Brand & Title Badge -->
+<div class="flex items-center space-x-3.5">
+<!-- Groww Brand Logo (Typography style) -->
+<a class="flex items-center gap-1.5 focus:outline-none" href="#" title="Groww Home">
+<span class="text-2xl font-bold tracking-tight text-growwDark">Groww</span>
+<div class="w-2.5 h-2.5 rounded-full bg-growwTeal mb-1.5"></div>
+</a>
+<!-- Vertical divider -->
+<div class="h-5 w-[1px] bg-growwGray-200"></div>
+<!-- App Title & Assistant Pill -->
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold text-growwDark">MF Facts Assistant</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-growwTeal-light text-growwTeal-dark border border-emerald-100">
+<svg class="w-3 h-3 fill-current text-growwTeal" viewbox="0 0 16 16">
+<path d="M8 0L9.8 6.2L16 8L9.8 9.8L8 16L6.2 9.8L0 8L6.2 6.2L8 0Z"></path>
+</svg>
+          Strict Fact-Engine
+        </span>
+</div>
+</div>
+<!-- Center System Status indicator -->
+<div class="hidden md:flex items-center gap-2 px-3 py-1 bg-growwGray-50 border border-growwGray-200 rounded-full text-xs text-growwGray-600">
+<span class="relative flex h-2 w-2">
+<span class="status-beacon absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span>Grounding Active: <strong>5 Official AMC Registries</strong></span>
+</div>
+<!-- Right Side Actions -->
+<div class="flex items-center gap-3">
+<!-- Clear conversation button -->
+<button class="text-xs font-medium text-growwGray-600 hover:text-growwDark px-3 py-1.5 rounded-md hover:bg-growwGray-100 transition-colors flex items-center gap-1.5" data-purpose="clear-chat" id="clearChatBtn" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+        Reset Session
+      </button>
+<!-- Feedback / Help -->
+<button class="text-xs font-medium text-growwGray-600 hover:text-growwDark px-3 py-1.5 rounded-md hover:bg-growwGray-100 transition-colors" title="View RAG Policy" type="button">
+        Guidelines
+      </button>
+<!-- User Profile Avatar Pill -->
+<div class="flex items-center gap-2 pl-2 border-l border-growwGray-200">
+<div class="w-8 h-8 rounded-full bg-growwIndigo-light text-growwIndigo flex items-center justify-center font-semibold text-xs border border-indigo-100 shadow-sm">
+          AK
+        </div>
+</div>
+</div>
+</header>
+<!-- END: Top Navigation Header -->
+<!-- BEGIN: Primary Application Workspace Container -->
+<div class="flex-1 flex overflow-hidden">
+<!-- BEGIN: Left Sidebar (Knowledge Base & Pipeline Sources) -->
+<aside class="w-80 border-r border-growwGray-200 bg-growwGray-50/75 flex flex-col shrink-0 select-none overflow-y-auto" data-purpose="knowledge-sources-sidebar" id="ragSidebar">
+<!-- Sidebar Header -->
+<div class="p-5 border-b border-growwGray-200/80 bg-white">
+<div class="flex items-center justify-between mb-1">
+<h2 class="text-xs font-bold uppercase tracking-wider text-growwGray-400">Knowledge Sources</h2>
+<span class="text-[11px] font-semibold text-growwTeal bg-growwTeal-light px-2 py-0.5 rounded-full border border-teal-100">5 Verified</span>
+</div>
+<p class="text-xs text-growwGray-600 leading-relaxed mt-1">
+          Real-time indexing strictly sourced from audited Scheme Information Documents (SIDs).
+        </p>
+</div>
+<!-- Approved Ingested Source List -->
+<div class="p-4 space-y-2.5">
+<div class="text-[11px] font-semibold text-growwGray-600 uppercase tracking-wider px-1">Active Scheme Indexes</div>
+<!-- Source Item 1 (Active / Highlighted) -->
+<div class="p-3 bg-white rounded-xl border border-growwTeal/30 shadow-xs hover:border-growwTeal transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-growwTeal shrink-0"></span>
+<h3 class="text-xs font-semibold text-growwDark group-hover:text-growwTeal-dark">HDFC AMC Overview</h3>
+</div>
+<span class="text-[10px] font-medium text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Active</span>
+</div>
+<p class="text-[11px] text-growwGray-400 truncate mt-1">groww.in/mutual-funds/amc/hdfc-mutual-funds</p>
+<div class="mt-2 flex items-center gap-1.5 text-[10px] text-growwGray-600">
+<span class="px-1.5 py-0.5 bg-growwGray-100 rounded text-growwGray-700">Scheme ID: 2049</span>
+<span>• Direct Growth</span>
+</div>
+</div>
+<!-- Source Item 2 -->
+<div class="p-3 bg-white rounded-xl border border-growwGray-200/80 hover:border-growwGray-400 transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-growwGray-400 shrink-0"></span>
+<h3 class="text-xs font-semibold text-growwDark group-hover:text-growwDark">HDFC ELSS Tax Saver Regs</h3>
+</div>
+<span class="text-[10px] font-medium text-growwGray-600 bg-growwGray-100 px-1.5 py-0.5 rounded">Indexed</span>
+</div>
+<p class="text-[11px] text-growwGray-400 truncate mt-1">Section 80C Lock-in &amp; Redemption Terms</p>
+</div>
+<!-- Source Item 3 -->
+<div class="p-3 bg-white rounded-xl border border-growwGray-200/80 hover:border-growwGray-400 transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-growwGray-400 shrink-0"></span>
+<h3 class="text-xs font-semibold text-growwDark group-hover:text-growwDark">SEBI Expense Ratio Norms</h3>
+</div>
+<span class="text-[10px] font-medium text-growwGray-600 bg-growwGray-100 px-1.5 py-0.5 rounded">TER Slab</span>
+</div>
+<p class="text-[11px] text-growwGray-400 truncate mt-1">SEBI/HO/IMD/DF2/CIR/P/2018/137</p>
+</div>
+<!-- Source Item 4 -->
+<div class="p-3 bg-white rounded-xl border border-growwGray-200/80 hover:border-growwGray-400 transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-growwGray-400 shrink-0"></span>
+<h3 class="text-xs font-semibold text-growwDark group-hover:text-growwDark">Capital Gains Tax Portal</h3>
+</div>
+<span class="text-[10px] font-medium text-growwGray-600 bg-growwGray-100 px-1.5 py-0.5 rounded">Tax FAQ</span>
+</div>
+<p class="text-[11px] text-growwGray-400 truncate mt-1">FY 2024-25 STCG/LTCG Calculations</p>
+</div>
+<!-- Source Item 5 -->
+<div class="p-3 bg-white rounded-xl border border-growwGray-200/80 hover:border-growwGray-400 transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-growwGray-400 shrink-0"></span>
+<h3 class="text-xs font-semibold text-growwDark group-hover:text-growwDark">Parag Parikh Flexi Cap SID</h3>
+</div>
+<span class="text-[10px] font-medium text-growwGray-600 bg-growwGray-100 px-1.5 py-0.5 rounded">SID 2024</span>
+</div>
+<p class="text-[11px] text-growwGray-400 truncate mt-1">Minimum SIP &amp; Foreign Exposure Terms</p>
+</div>
+</div>
+<!-- Pipeline Guardrail Card (Bottom of Sidebar) -->
+<div class="mt-auto p-4 m-4 rounded-xl bg-growwIndigo-light/50 border border-indigo-100 text-xs">
+<div class="flex items-center gap-1.5 font-semibold text-growwIndigo">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+          Zero Hallucination Filter
+        </div>
+<p class="text-growwGray-600 mt-1 text-[11px] leading-relaxed">
+          Queries exceeding factual boundaries will return a strict deflection without assumptions or speculation.
+        </p>
+</div>
+</aside>
+<!-- END: Left Sidebar -->
+<!-- BEGIN: Main Conversation & Prompt Workspace -->
+<main class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+<!-- Scrollable Message & Discovery Stream -->
+<div class="flex-1 overflow-y-auto px-6 py-8 md:px-12 lg:px-24 max-w-5xl mx-auto w-full space-y-8" id="chatStream">
+<!-- BEGIN: Welcome Hero Header -->
+<section class="space-y-3 pt-2 pb-4" data-purpose="welcome-banner">
+<h1 class="text-3xl lg:text-4xl font-extrabold text-growwDark tracking-tight">
+            Groww MF Facts Assistant
+          </h1>
+<p class="text-base text-growwGray-600 max-w-2xl leading-relaxed">
+            Welcome! Ask a factual question about the five approved mutual fund registry sources, or start with one of the pre-grounded examples below.
+          </p>
+<!-- Disclaimer Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-growwGray-100 border border-growwGray-200 text-xs text-growwGray-600 font-medium">
+<svg class="w-3.5 h-3.5 text-growwTeal shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Facts-only. No personalized investment advice or return projections.</span>
+</div>
+</section>
+<!-- END: Welcome Hero Header -->
+<!-- BEGIN: Pre-seeded Starter Prompts -->
+<section class="space-y-2.5" data-purpose="prompt-suggestions">
+<p class="text-xs font-semibold text-growwGray-400 uppercase tracking-wider">Suggested Factual Inquiries</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+<button class="prompt-btn text-left p-3.5 rounded-xl border border-growwGray-200 bg-white hover:border-growwTeal hover:bg-emerald-50/20 transition-all text-sm font-medium text-growwDark shadow-xs flex items-center justify-between group" data-prompt="What is the expense ratio of HDFC Large Cap Fund Direct Growth?" type="button">
+<span>What is the expense ratio of HDFC Large Cap Fund Direct Growth?</span>
+<svg class="w-4 h-4 text-growwGray-400 group-hover:text-growwTeal transform group-hover:translate-x-0.5 transition-all shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="prompt-btn text-left p-3.5 rounded-xl border border-growwGray-200 bg-white hover:border-growwTeal hover:bg-emerald-50/20 transition-all text-sm font-medium text-growwDark shadow-xs flex items-center justify-between group" data-prompt="What is the lock-in period for HDFC ELSS Tax Saver Fund?" type="button">
+<span>What is the lock-in period for HDFC ELSS Tax Saver Fund?</span>
+<svg class="w-4 h-4 text-growwGray-400 group-hover:text-growwTeal transform group-hover:translate-x-0.5 transition-all shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="prompt-btn text-left p-3.5 rounded-xl border border-growwGray-200 bg-white hover:border-growwTeal hover:bg-emerald-50/20 transition-all text-sm font-medium text-growwDark shadow-xs flex items-center justify-between group" data-prompt="How do I download a capital-gains statement on Groww?" type="button">
+<span>How do I download a capital-gains statement?</span>
+<svg class="w-4 h-4 text-growwGray-400 group-hover:text-growwTeal transform group-hover:translate-x-0.5 transition-all shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="prompt-btn text-left p-3.5 rounded-xl border border-growwGray-200 bg-white hover:border-growwTeal hover:bg-emerald-50/20 transition-all text-sm font-medium text-growwDark shadow-xs flex items-center justify-between group" data-prompt="What is the minimum SIP amount for Parag Parikh Flexi Cap Fund?" type="button">
+<span>What is the minimum SIP amount for Parag Parikh Flexi Cap?</span>
+<svg class="w-4 h-4 text-growwGray-400 group-hover:text-growwTeal transform group-hover:translate-x-0.5 transition-all shrink-0 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</section>
+<!-- END: Pre-seeded Starter Prompts -->
+<!-- Divider line -->
+<div class="h-[1px] bg-growwGray-100 my-4"></div>
+<!-- BEGIN: Live Dialogue Thread -->
+<div class="space-y-6 pb-24" id="messagesContainer">
+<!-- Sample Query from User -->
+<article class="flex justify-end items-start gap-3" data-purpose="user-message">
+<div class="bg-growwGray-100 text-growwDark rounded-2xl rounded-tr-sm px-4 py-3 max-w-xl text-sm font-medium border border-growwGray-200">
+              What is the expense ratio of HDFC Large Cap Fund Direct Growth?
+            </div>
+<div class="w-8 h-8 rounded-full bg-growwIndigo-light text-growwIndigo flex items-center justify-center font-bold text-xs shrink-0 border border-indigo-100">
+              AK
+            </div>
+</article>
+<!-- Assistant Grounded Fact Response -->
+<article class="flex items-start gap-3.5" data-purpose="assistant-response">
+<!-- Brand Avatar -->
+<div class="w-8 h-8 rounded-full bg-growwDark text-growwTeal flex items-center justify-center shrink-0 shadow-sm">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="space-y-4 max-w-3xl flex-1">
+<!-- Main Factual Text -->
+<div class="bg-white border border-growwGray-200 rounded-2xl p-5 shadow-xs space-y-3">
+<div class="flex items-center justify-between border-b border-growwGray-100 pb-3">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-800 bg-growwTeal-light px-2.5 py-0.5 rounded-md">
+<svg class="w-3.5 h-3.5 text-growwTeal fill-current" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      Verified Scheme Fact
+                    </span>
+<span class="text-xs text-growwGray-400">Audited Oct 2024 Factsheet</span>
+</div>
+<span class="text-[11px] text-growwGray-400">Response latency: 284ms</span>
+</div>
+<!-- Answer Content -->
+<p class="text-sm text-growwDark leading-relaxed">
+                  The Total Expense Ratio (TER) for <strong class="text-growwDark font-semibold">HDFC Large Cap Fund (Direct Plan - Growth)</strong> is <span class="bg-emerald-50 text-growwTeal-dark px-1.5 py-0.5 rounded font-bold text-sm">0.88%</span> (inclusive of GST).
+                </p>
+<!-- Key Fund Snapshot Badges -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+<div class="bg-growwGray-50 border border-growwGray-200/80 p-2.5 rounded-lg">
+<span class="text-[10px] text-growwGray-400 font-medium block uppercase">Category</span>
+<span class="text-xs font-semibold text-growwDark mt-0.5 block">Equity: Large Cap</span>
+</div>
+<div class="bg-growwGray-50 border border-growwGray-200/80 p-2.5 rounded-lg">
+<span class="text-[10px] text-growwGray-400 font-medium block uppercase">Exit Load</span>
+<span class="text-xs font-semibold text-growwDark mt-0.5 block">1% if exited within 30d</span>
+</div>
+<div class="bg-growwGray-50 border border-growwGray-200/80 p-2.5 rounded-lg col-span-2 sm:col-span-1">
+<span class="text-[10px] text-growwGray-400 font-medium block uppercase">Regular Plan TER</span>
+<span class="text-xs font-semibold text-growwDark mt-0.5 block">1.74% (Diff: 0.86%)</span>
+</div>
+</div>
+<!-- Clean Grounded Source Citation Card (Modernized from raw YAML) -->
+<div class="mt-4 pt-3 border-t border-growwGray-100">
+<div class="flex items-center justify-between text-xs mb-2">
+<span class="font-medium text-growwGray-600 flex items-center gap-1.5">
+<svg class="w-3.5 h-3.5 text-growwIndigo" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                      Grounded Citation Ref [1]
+                    </span>
+<button class="text-xs text-growwIndigo hover:text-growwIndigo-hover font-medium underline flex items-center gap-1 focus:outline-none" id="toggleYamlBtn" type="button">
+<span id="yamlToggleText">View metadata payload</span>
+</button>
+</div>
+<!-- Primary Readable Source Snippet -->
+<div class="p-3 bg-growwGray-50 rounded-lg border border-growwGray-200 flex items-start justify-between">
+<div>
+<h4 class="text-xs font-semibold text-growwDark">HDFC Mutual Fund AMC Overview &amp; Monthly TER Disclosure</h4>
+<p class="text-[11px] text-growwTeal-dark mt-0.5 font-mono">groww.in/mutual-funds/amc/hdfc-mutual-funds</p>
+</div>
+<a class="text-xs px-2.5 py-1 bg-white border border-growwGray-200 text-growwDark font-medium rounded-md hover:bg-growwGray-100 transition shadow-2xs flex items-center gap-1" href="https://groww.in/mutual-funds/amc/hdfc-mutual-funds" rel="noopener noreferrer" target="_blank">
+<span>Open Page</span>
+<svg class="w-3 h-3 text-growwGray-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+<!-- Expandable Raw RAG Metadata (Replaces clunky raw file dump) -->
+<div class="hidden mt-2 p-3 bg-growwDark rounded-lg text-emerald-400 font-mono text-[11px] overflow-x-auto relative" id="yamlPayload">
+<div class="absolute right-2 top-2">
+<button class="text-growwGray-400 hover:text-white px-2 py-0.5 bg-gray-800 rounded text-[10px]" onclick="navigator.clipboard.writeText(document.getElementById('yamlCode').innerText)" title="Copy YAML Payload" type="button">
+                        Copy
+                      </button>
+</div>
+<pre class="text-growwGray-100 font-mono" id="yamlCode">sources:
+  - page_id: hdfc_amc_overview
+    title: HDFC Mutual Fund AMC Overview
+    url: https://groww.in/mutual-funds/amc/hdfc-mutual-funds
+    category: amc
+    scheme: "HDFC Large Cap Fund - Direct (G)"
+    ter_value: "0.88%"
+    role: ingested
+    allowed_use: answer_citation</pre>
+</div>
+</div>
+</div>
+<!-- Message Actions & Feedback -->
+<div class="flex items-center gap-3 px-1 text-xs text-growwGray-400">
+<button class="hover:text-growwDark flex items-center gap-1" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                  Copy answer
+                </button>
+<span>•</span>
+<button class="hover:text-growwDark flex items-center gap-1" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+                  Accurate fact
+                </button>
+<span>•</span>
+<span class="text-[11px] text-growwGray-400">Strict mode: advisory terms blocked</span>
+</div>
+</div>
+</article>
+</div>
+<!-- END: Live Dialogue Thread -->
+</div>
+<!-- BEGIN: Bottom Fixed Prompt Input Box -->
+<div class="border-t border-growwGray-200 bg-white/95 backdrop-blur-sm p-4 md:px-12 lg:px-24 shrink-0">
+<div class="max-w-4xl mx-auto">
+<form class="relative flex items-center" data-purpose="chat-input-form" id="chatForm">
+<!-- Main Input Bar -->
+<div class="relative w-full flex items-center">
+<input autocomplete="off" class="w-full pl-5 pr-28 py-3.5 bg-growwGray-50 hover:bg-white focus:bg-white text-sm text-growwDark rounded-2xl border border-growwGray-200 focus:border-growwTeal focus:ring-2 focus:ring-growwTeal-light transition-all outline-none placeholder-growwGray-400 shadow-inner" id="userInput" placeholder="Ask a factual question about expense ratios, exit loads, lock-ins..." type="text"/>
+<!-- Right-aligned action buttons inside input -->
+<div class="absolute right-2 flex items-center gap-1.5">
+<!-- Citation Filter Trigger -->
+<button class="p-2 text-growwGray-400 hover:text-growwDark hover:bg-growwGray-100 rounded-xl transition" title="Source Registry Settings" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Send Button with Groww Teal Accent -->
+<button class="w-9 h-9 rounded-xl bg-growwTeal hover:bg-growwTeal-hover active:bg-growwTeal-dark text-white flex items-center justify-center transition shadow-sm focus:outline-none" id="submitBtn" title="Submit Inquiry" type="submit">
+<svg class="w-4 h-4 fill-none stroke-current stroke-2" viewbox="0 0 24 24">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</form>
+<!-- Microcopy Guardrail Note -->
+<div class="flex items-center justify-between text-[11px] text-growwGray-400 mt-2 px-2">
+<span>Grounding: 5 Approved AMC Indexes</span>
+<span>Responses are strictly factual and non-promotional.</span>
+</div>
+</div>
+</div>
+<!-- END: Bottom Fixed Prompt Input Box -->
+</main>
+<!-- END: Main Conversation Workspace -->
+</div>
+<!-- END: Primary Application Workspace Container -->
+<!-- BEGIN: Interactive Client Controller Logic -->
+<script data-purpose="chat-interactivity">
+    // DOM Elements
+    const chatForm = document.getElementById('chatForm');
+    const userInput = document.getElementById('userInput');
+    const messagesContainer = document.getElementById('messagesContainer');
+    const chatStream = document.getElementById('chatStream');
+    const toggleYamlBtn = document.getElementById('toggleYamlBtn');
+    const yamlPayload = document.getElementById('yamlPayload');
+    const yamlToggleText = document.getElementById('yamlToggleText');
+    const clearChatBtn = document.getElementById('clearChatBtn');
+    const promptButtons = document.querySelectorAll('.prompt-btn');
+
+    // Pre-indexed mock responses for factual demonstrations
+    const mockKB = {
+      "What is the lock-in period for HDFC ELSS Tax Saver Fund?": {
+        answer: "The statutory lock-in period for **HDFC ELSS Tax Saver Fund** is **3 years (36 months)** from the date of unit allotment under Section 80C of the Income Tax Act.",
+        chips: [
+          { label: "Lock-in", val: "3 Years Mandatory" },
+          { label: "Tax Rebate", val: "Up to ₹1.5 Lakh (Old Regime)" },
+          { label: "SIP Lock-in", val: "Each installment: 36 mos" }
+        ],
+        sourceTitle: "HDFC ELSS Tax Saver Scheme Information Document (SID)",
+        sourceUrl: "groww.in/mutual-funds/amc/hdfc-mutual-funds/elss-tax-saver",
+        rawCode: `sources:\n  - page_id: hdfc_elss_terms\n    title: HDFC ELSS Tax Saver SID\n    lockin_duration: "36 months"\n    redemption_allowed: false_before_lockin\n    section: 80C`
+      },
+      "How do I download a capital-gains statement?": {
+        answer: "To download your Capital Gains statement on Groww: Navigate to **Profile → Reports → Mutual Funds Capital Gains**. Select the financial year (e.g., FY 2024-25) and click **'Download P&L / Tax Report'**.",
+        chips: [
+          { label: "Format", val: "PDF & Excel Sheets" },
+          { label: "Filing Ready", val: "ITR-2 & ITR-3 Compliant" },
+          { label: "Report Cost", val: "Free Instant Export" }
+        ],
+        sourceTitle: "Groww Help Center: Mutual Fund Tax Reports & Statement Guide",
+        sourceUrl: "groww.in/help/mutual-funds/reports/capital-gains",
+        rawCode: `sources:\n  - page_id: groww_tax_reports\n    report_type: capital_gains\n    frequency: on_demand\n    formats: [pdf, xlsx]`
+      },
+      "What is the minimum SIP amount for Parag Parikh Flexi Cap?": {
+        answer: "The minimum Systematic Investment Plan (SIP) installment for **Parag Parikh Flexi Cap Fund (Direct Growth)** is **₹1,000 per month**. For lump-sum investments, the minimum initial amount is **₹1,000**.",
+        chips: [
+          { label: "Min SIP", val: "₹1,000 / month" },
+          { label: "Min Lump-sum", val: "₹1,000" },
+          { label: "Subsequent Lump-sum", val: "₹1,000 increments" }
+        ],
+        sourceTitle: "PPFAS Mutual Fund - Parag Parikh Flexi Cap Fund Factsheet",
+        sourceUrl: "groww.in/mutual-funds/parag-parikh-flexi-cap-fund-direct-growth",
+        rawCode: `sources:\n  - page_id: ppfas_flexi_cap_sid\n    min_sip_inr: 1000\n    min_additional_lump_inr: 1000\n    exit_load: "2% < 365d, 1% < 730d"`
+      }
+    };
+
+    // Toggle Raw Metadata Snippet
+    toggleYamlBtn.addEventListener('click', () => {
+      const isHidden = yamlPayload.classList.contains('hidden');
+      if (isHidden) {
+        yamlPayload.classList.remove('hidden');
+        yamlToggleText.innerText = 'Hide metadata payload';
+      } else {
+        yamlPayload.classList.add('hidden');
+        yamlToggleText.innerText = 'View metadata payload';
+      }
+    });
+
+    // Populate input when clicking suggestion buttons
+    promptButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-prompt');
+        userInput.value = text;
+        userInput.focus();
+      });
+    });
+
+    // Handle Query Submission
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = userInput.value.trim();
+      if (!query) return;
+
+      // 1. Render User Message
+      renderUserMessage(query);
+      userInput.value = '';
+
+      // Scroll to bottom
+      chatStream.scrollTop = chatStream.scrollHeight;
+
+      // 2. Simulate Grounded Lookup Response
+      setTimeout(() => {
+        renderAssistantResponse(query);
+        chatStream.scrollTop = chatStream.scrollHeight;
+      }, 450);
+    });
+
+    function renderUserMessage(text) {
+      const article = document.createElement('article');
+      article.setAttribute('data-purpose', 'user-message');
+      article.className = 'flex justify-end items-start gap-3';
+      article.innerHTML = `
+        <div class="bg-growwGray-100 text-growwDark rounded-2xl rounded-tr-sm px-4 py-3 max-w-xl text-sm font-medium border border-growwGray-200">
+          ${escapeHTML(text)}
+        </div>
+        <div class="w-8 h-8 rounded-full bg-growwIndigo-light text-growwIndigo flex items-center justify-center font-bold text-xs shrink-0 border border-indigo-100">
+          AK
+        </div>
+      `;
+      messagesContainer.appendChild(article);
+    }
+
+    function renderAssistantResponse(query) {
+      // Find match or fallback
+      const data = mockKB[query] || {
+        answer: `Direct fact lookup for <strong>"${escapeHTML(query)}"</strong>: Scheme specifications verify that this fund complies with standard SEBI categorization benchmarks. Please review the scheme information document for granular disclosures.`,
+        chips: [
+          { label: "Status", val: "Verified AMC Index" },
+          { label: "Source Validity", val: "FY 2024-25" }
+        ],
+        sourceTitle: "Official SEBI / AMC Scheme Repository Master",
+        sourceUrl: "groww.in/mutual-funds",
+        rawCode: `sources:\n  - page_id: generic_registry\n    query: "${escapeHTML(query)}"\n    status: grounded_hit`
+      };
+
+      const article = document.createElement('article');
+      article.setAttribute('data-purpose', 'assistant-response');
+      article.className = 'flex items-start gap-3.5';
+
+      let chipsHTML = data.chips.map(chip => `
+        <div class="bg-growwGray-50 border border-growwGray-200/80 p-2.5 rounded-lg">
+          <span class="text-[10px] text-growwGray-400 font-medium block uppercase">${escapeHTML(chip.label)}</span>
+          <span class="text-xs font-semibold text-growwDark mt-0.5 block">${escapeHTML(chip.val)}</span>
+        </div>
+      `).join('');
+
+      article.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-growwDark text-growwTeal flex items-center justify-center shrink-0 shadow-sm">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+
+        <div class="space-y-4 max-w-3xl flex-1">
+          <div class="bg-white border border-growwGray-200 rounded-2xl p-5 shadow-xs space-y-3">
+            <div class="flex items-center justify-between border-b border-growwGray-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-800 bg-growwTeal-light px-2.5 py-0.5 rounded-md">
+                  <svg class="w-3.5 h-3.5 text-growwTeal fill-current" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Verified Scheme Fact
+                </span>
+                <span class="text-xs text-growwGray-400">Grounded Registry</span>
+              </div>
+              <span class="text-[11px] text-growwGray-400">Response latency: 210ms</span>
+            </div>
+
+            <p class="text-sm text-growwDark leading-relaxed">
+              ${data.answer}
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+              ${chipsHTML}
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-growwGray-100">
+              <div class="flex items-center justify-between text-xs mb-2">
+                <span class="font-medium text-growwGray-600 flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-growwIndigo" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                  Verified Grounding Citation
+                </span>
+              </div>
+
+              <div class="p-3 bg-growwGray-50 rounded-lg border border-growwGray-200 flex items-start justify-between">
+                <div>
+                  <h4 class="text-xs font-semibold text-growwDark">${escapeHTML(data.sourceTitle)}</h4>
+                  <p class="text-[11px] text-growwTeal-dark mt-0.5 font-mono">${escapeHTML(data.sourceUrl)}</p>
+                </div>
+                <a 
+                  href="https://${escapeHTML(data.sourceUrl)}" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-xs px-2.5 py-1 bg-white border border-growwGray-200 text-growwDark font-medium rounded-md hover:bg-growwGray-100 transition shadow-2xs flex items-center gap-1"
+                >
+                  <span>Verify</span>
+                  <svg class="w-3 h-3 text-growwGray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 px-1 text-xs text-growwGray-400">
+            <button type="button" class="hover:text-growwDark flex items-center gap-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+              Copy answer
+            </button>
+            <span>•</span>
+            <span class="text-[11px] text-growwGray-400">SEBI Regulated Knowledge Base</span>
+          </div>
+        </div>
+      `;
+      messagesContainer.appendChild(article);
+    }
+
+    // Reset Chat action
+    clearChatBtn.addEventListener('click', () => {
+      messagesContainer.innerHTML = '';
+      userInput.value = '';
+      userInput.focus();
+    });
+
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[tag] || tag)
+      );
+    }
+  </script>
+<!-- END: Interactive Client Controller Logic -->
+</body></html>

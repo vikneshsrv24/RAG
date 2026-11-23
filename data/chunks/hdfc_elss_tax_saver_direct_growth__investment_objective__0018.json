@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_elss_tax_saver_direct_growth__investment_objective__0018",
+  "page_id": "hdfc_elss_tax_saver_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+  "category": "scheme",
+  "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+  "section": "Investment Objective",
+  "char_start": 0,
+  "char_end": 239,
+  "fetch_timestamp": "2026-11-23T07:12:09Z",
+  "content_hash": "sha256:cbdfab8dbb8226f3a0bb476cb2ab1d2b62d287b926bf4cd6e259f781bc84f0ce",
+  "text": "Investment Objective\nThe scheme seeks to generate capital appreciation / income from a portfolio, comprising predominantly of equity & equity related instruments. Fund benchmark\nNIFTY 500 Total Return Index\nScheme Information Document(SID)",
+  "fact_hints": [
+    "benchmark"
+  ]
+}

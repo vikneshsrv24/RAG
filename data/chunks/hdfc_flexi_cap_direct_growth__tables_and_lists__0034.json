@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0034",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Tables and Lists",
+  "char_start": 0,
+  "char_end": 900,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "Name | Sector | Instruments | Assets\nICICI Bank Ltd | Financial | Equity | 9.28%\nHDFC Bank Ltd | Financial | Equity | 5.79%\nAxis Bank Ltd | Financial | Equity | 5.55%\nState Bank of India | Financial | Equity | 3.88%\nZomato Ltd | Technology | Equity | 3.76%\nKotak Mahindra Bank Ltd | Financial | Equity | 3.75%\nSBI Life Insurance Company Ltd | Financial | Equity | 3.13%\nLarsen & Toubro Ltd | Industrials | Equity | 3.11%\nBharti Airtel Ltd | Technology | Equity | 3.07%\nInterglobe Aviation Ltd | Industrials | Equity | 2.88%\nHCL Technologies Ltd | Technology | Equity | 2.72%\nCipla Ltd | Healthcare | Equity | 2.48%\nMaruti Suzuki India Ltd | Consumer Discretionary | Equity | 2.46%\nEicher Motors Ltd | Consumer Discretionary | Equity | 2.28%\nRepo | Unspecified | Repo | 2.08%\nPower Grid Corporation of India Ltd | Energy & Utilities | Equity | 2.04%\nMax Healthcare Institute Ltd | Healthcare | Equity ",
+  "fact_hints": [
+    "expense_ratio"
+  ]
+}

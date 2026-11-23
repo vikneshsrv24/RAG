@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__investment_objective__0022",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Investment Objective",
+  "char_start": 0,
+  "char_end": 237,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "Investment Objective\nThe scheme seeks to generate capital appreciation / income from a portfolio, predominantly invested in equity & equity related instruments. Fund benchmark\nNIFTY 500 Total Return Index\nScheme Information Document(SID)",
+  "fact_hints": [
+    "benchmark"
+  ]
+}

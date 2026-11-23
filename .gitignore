@@ -1,0 +1,18 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Generated artifacts and logs are rebuilt by the pipeline.
+data/chroma_store/*
+!data/chroma_store/.gitkeep
+logs/*
+!logs/retrieval/
+!logs/answers/
+logs/**/*.json
+!logs/retrieval/.gitkeep
+!logs/answers/.gitkeep
+
+# Original user-provided ZIP; the documented copy lives in Docs/stitch/.
+stitch_groww_investment_mobile_app.zip

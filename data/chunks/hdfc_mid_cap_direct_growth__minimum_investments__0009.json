@@ -1,0 +1,16 @@
+{
+  "chunk_id": "hdfc_mid_cap_direct_growth__minimum_investments__0009",
+  "page_id": "hdfc_mid_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Mid Cap Fund Direct Growth",
+  "section": "Minimum investments",
+  "char_start": 0,
+  "char_end": 95,
+  "fetch_timestamp": "2026-11-23T07:12:09Z",
+  "content_hash": "sha256:6426bb6777a21ccecd98ecbd5750ad4d00bc65861ad8f03809f0ae365e8d9aaa",
+  "text": "Minimum investments\nMin. for 1st investment\n₹100\nMin. for 2nd investment\n₹100\nMin. for SIP\n₹100",
+  "fact_hints": [
+    "minimum_sip"
+  ]
+}

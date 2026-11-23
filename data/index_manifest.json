@@ -1,0 +1,8 @@
+{
+  "collection": "groww_mf_faq",
+  "provider": "chromadb",
+  "distance": "cosine",
+  "embedding_model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "chunk_count": 187,
+  "indexed_at": "2026-11-23T07:40:01Z"
+}

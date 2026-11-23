@@ -1,0 +1,17 @@
+{
+  "chunk_id": "hdfc_elss_tax_saver_direct_growth__exit_load__0011",
+  "page_id": "hdfc_elss_tax_saver_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+  "category": "scheme",
+  "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+  "section": "Exit Load",
+  "char_start": 0,
+  "char_end": 267,
+  "fetch_timestamp": "2026-11-23T07:12:09Z",
+  "content_hash": "sha256:cbdfab8dbb8226f3a0bb476cb2ab1d2b62d287b926bf4cd6e259f781bc84f0ce",
+  "text": "Exit load\nA fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment. Stamp duty\nA form of tax payable for the purchase or sale of an asset or security. Exit Load\n01 Jan 2013\n--",
+  "fact_hints": [
+    "expense_ratio",
+    "exit_load"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "chunk_id": "hdfc_flexi_cap_direct_growth__exit_load__0012",
+  "page_id": "hdfc_flexi_cap_direct_growth",
+  "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+  "category": "scheme",
+  "scheme": "HDFC Flexi Cap Direct Plan Growth",
+  "section": "Exit Load",
+  "char_start": 0,
+  "char_end": 306,
+  "fetch_timestamp": "2026-11-23T07:12:08Z",
+  "content_hash": "sha256:94c1ce6b5a8eea282b24bf9c3326e3f066bcc2e748b61b762d6013b6e46ce561",
+  "text": "Exit load\nA fee payable to a mutual fund house for exiting a fund (fully or partially) before the completion of a specified period from the date of investment. Stamp duty\nA form of tax payable for the purchase or sale of an asset or security. Exit Load\n01 Jan 2013\nExit load of 1% if redeemed within 1 year",
+  "fact_hints": [
+    "expense_ratio",
+    "exit_load"
+  ]
+}

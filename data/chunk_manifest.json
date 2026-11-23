@@ -1,0 +1,1825 @@
+{
+  "strategy": "structure_aware",
+  "target_chars": 900,
+  "overlap_chars": 120,
+  "strategy_notes": "Section-first chunking keeps each AMC/scheme isolated; tables and list items stay intact; sentence-level overlap is applied only within a section.",
+  "chunk_count": 187,
+  "chunks": [
+    {
+      "chunk_id": "hdfc_amc_overview__long__0001",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Long",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__list_of_hdfc_mutual_fund_in_india__0002",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "List of HDFC Mutual Fund in India",
+      "fact_hints": [
+        "expense_ratio",
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__list_of_hdfc_mutual_fund_in_india__0003",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "List of HDFC Mutual Fund in India",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__list_of_hdfc_mutual_fund_in_india__0004",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "List of HDFC Mutual Fund in India",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__returns_calculator__0005",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Returns calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__returns_calculator__0006",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Returns calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__how_to_invest_in_hdfc_mutual_funds__0007",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "How to invest in HDFC Mutual Funds?",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__how_to_invest_in_hdfc_mf_on_groww__0008",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "How to Invest in HDFC MF on Groww",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__let_s_have_a_closer_look__0009",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Let's have a closer look",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_flexi_cap_direct_plan_growth__0010",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Flexi Cap Direct Plan Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_defence_fund_direct_growth__0011",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Defence Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_silver_etf_fof_direct_growth__0012",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Silver ETF FoF Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_pharma_and_healthcare_fund_direct_growth__0013",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Pharma And Healthcare Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_mid_cap_fund_direct_growth__0014",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Mid Cap Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_nifty_50_index_fund_direct_growth__0015",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC NIFTY 50 Index Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_small_cap_fund_direct_growth__0016",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Small Cap Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_balanced_advantage_fund_direct_growth__0017",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Balanced Advantage Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_multi_cap_fund_direct_growth__0018",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Multi Cap Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_bse_sensex_index_fund_direct_growth__0019",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC BSE Sensex Index Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_focused_fund_direct_growth__0020",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Focused Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_large_cap_fund_direct_growth__0021",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Large Cap Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_transportation_and_logistics_fund_direct_gr__0022",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Transportation and Logistics Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_large_mid_cap_fund_direct_growth__0023",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Large & Mid Cap Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__hdfc_manufacturing_fund_direct_growth__0024",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "HDFC Manufacturing Fund Direct Growth",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0025",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0026",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0027",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0028",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0029",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0030",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0031",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0032",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__view_mutual_funds_from_other_amcs__0033",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "View Mutual Funds from Other AMCs",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0034",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio",
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0035",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0036",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0037",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0038",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0039",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_amc_overview__tables_and_lists__0040",
+      "page_id": "hdfc_amc_overview",
+      "source_url": "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+      "scheme": "",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__hdfc_large_cap_fund_direct_growth__0001",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "HDFC Large Cap Fund Direct Growth",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__return_calculator__0002",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__return_calculator__0003",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__return_calculator__0004",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__return_calculator__0005",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__minimum_investments__0006",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Minimum investments",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__understand_terms__0007",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Understand terms",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__returns_and_rankings__0008",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Returns and rankings",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__exit_load__0009",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Exit Load",
+      "fact_hints": [
+        "expense_ratio",
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__exit_load_stamp_duty_and_tax__0010",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Exit load, stamp duty and tax",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tax_implication__0011",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tax implication",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__compare_similar_funds__0012",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Compare similar funds",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_management__0013",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_management__0014",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_management__0015",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_management__0016",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "exit_load",
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__investment_objective__0017",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Investment Objective",
+      "fact_hints": [
+        "expense_ratio",
+        "benchmark"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0018",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0019",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0020",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0021",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0022",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0023",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0024",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0025",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0026",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__fund_house__0027",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tables_and_lists__0028",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tables_and_lists__0029",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tables_and_lists__0030",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tables_and_lists__0031",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tables_and_lists__0032",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_large_cap_direct_growth__tables_and_lists__0033",
+      "page_id": "hdfc_large_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth",
+      "scheme": "HDFC Large Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__hdfc_flexi_cap_direct_plan_growth__0001",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "HDFC Flexi Cap Direct Plan Growth",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0002",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0003",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0004",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0005",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0006",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0007",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__return_calculator__0008",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__minimum_investments__0009",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Minimum investments",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__understand_terms__0010",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Understand terms",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__returns_and_rankings__0011",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Returns and rankings",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__exit_load__0012",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Exit Load",
+      "fact_hints": [
+        "expense_ratio",
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__exit_load_stamp_duty_and_tax__0013",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Exit load, stamp duty and tax",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tax_implication__0014",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tax implication",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__compare_similar_funds__0015",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Compare similar funds",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0016",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0017",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0018",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0019",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0020",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio",
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_management__0021",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "exit_load",
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__investment_objective__0022",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Investment Objective",
+      "fact_hints": [
+        "benchmark"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0023",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0024",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0025",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0026",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0027",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0028",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0029",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0030",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0031",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__fund_house__0032",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0033",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0034",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0035",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0036",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0037",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0038",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0039",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_flexi_cap_direct_growth__tables_and_lists__0040",
+      "page_id": "hdfc_flexi_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+      "scheme": "HDFC Flexi Cap Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__hdfc_elss_tax_saver_fund_direct_plan_growth__0001",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__return_calculator__0002",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__return_calculator__0003",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__return_calculator__0004",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__return_calculator__0005",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__return_calculator__0006",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__return_calculator__0007",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__minimum_investments__0008",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Minimum investments",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__understand_terms__0009",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Understand terms",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__returns_and_rankings__0010",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Returns and rankings",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__exit_load__0011",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Exit Load",
+      "fact_hints": [
+        "expense_ratio",
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__exit_load_stamp_duty_and_tax__0012",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Exit load, stamp duty and tax",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tax_implication__0013",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tax implication",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_management__0014",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_management__0015",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_management__0016",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_management__0017",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "minimum_sip",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__investment_objective__0018",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Investment Objective",
+      "fact_hints": [
+        "benchmark"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0019",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0020",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0021",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0022",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0023",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0024",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0025",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0026",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0027",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__fund_house__0028",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tables_and_lists__0029",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tables_and_lists__0030",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tables_and_lists__0031",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tables_and_lists__0032",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tables_and_lists__0033",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_elss_tax_saver_direct_growth__tables_and_lists__0034",
+      "page_id": "hdfc_elss_tax_saver_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth",
+      "scheme": "HDFC ELSS Tax Saver Fund Direct Plan Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__hdfc_mid_cap_fund_direct_growth__0001",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "HDFC Mid Cap Fund Direct Growth",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0002",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0003",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0004",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0005",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0006",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0007",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__return_calculator__0008",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Return calculator",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__minimum_investments__0009",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Minimum investments",
+      "fact_hints": [
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__understand_terms__0010",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Understand terms",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__returns_and_rankings__0011",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Returns and rankings",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__exit_load__0012",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Exit Load",
+      "fact_hints": [
+        "expense_ratio",
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__exit_load_stamp_duty_and_tax__0013",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Exit load, stamp duty and tax",
+      "fact_hints": [
+        "exit_load"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tax_implication__0014",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tax implication",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__compare_similar_funds__0015",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Compare similar funds",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_management__0016",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_management__0017",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_management__0018",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_management__0019",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund management",
+      "fact_hints": [
+        "exit_load",
+        "minimum_sip"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__investment_objective__0020",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Investment Objective",
+      "fact_hints": [
+        "expense_ratio",
+        "benchmark"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0021",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0022",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0023",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0024",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0025",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0026",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0027",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0028",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "lock_in"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0029",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__fund_house__0030",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Fund house",
+      "fact_hints": [
+        "expense_ratio",
+        "statement_download"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0031",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0032",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0033",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0034",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0035",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0036",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0037",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0038",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0039",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": [
+        "expense_ratio"
+      ]
+    },
+    {
+      "chunk_id": "hdfc_mid_cap_direct_growth__tables_and_lists__0040",
+      "page_id": "hdfc_mid_cap_direct_growth",
+      "source_url": "https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth",
+      "scheme": "HDFC Mid Cap Fund Direct Growth",
+      "section": "Tables and Lists",
+      "fact_hints": []
+    }
+  ]
+}
